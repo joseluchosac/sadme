@@ -1,0 +1,247 @@
+[
+	{
+		"seccion": "100",
+		"ordinal": 0,
+		"campo": "empresa",
+		"campo_desc": "EMPRESA",
+		"valor": ""
+	},
+	{
+		"seccion": "100",
+		"ordinal": 1,
+		"campo": "razon_social",
+		"campo_desc": "RAZON SOCIAL",
+		"valor": "CONGREGACION NUESTRA SEÑORA DE LA PAZ"
+	},
+	{
+		"seccion": "100",
+		"ordinal": 2,
+		"campo": "nombre_comercial",
+		"campo_desc": "NOMBRE COMERCIAL",
+		"valor": "POLICLÍNICO REYNA DE LA PAZ"
+	},
+	{
+		"seccion": "100",
+		"ordinal": 3,
+		"campo": "ruc",
+		"campo_desc": "RUC",
+		"valor": "20153316237"
+	},
+	{
+		"seccion": "100",
+		"ordinal": 4,
+		"campo": "direccion",
+		"campo_desc": "DIRECCIÓN",
+		"valor": "Av. Elmer Faucett Nro. 472"
+	},
+	{
+		"seccion": "100",
+		"ordinal": 5,
+		"campo": "ubigeo",
+		"campo_desc": "UBIGEO",
+		"valor": "Callao - Prov. Const. del Callao - Carmen de la Legua Reynoso"
+	},
+	{
+		"seccion": "100",
+		"ordinal": 6,
+		"campo": "ubigeo_code",
+		"campo_desc": "CÓDIGO UBIGEO",
+		"valor": "070103"
+	},
+	{
+		"seccion": "100",
+		"ordinal": 7,
+		"campo": "logo_path",
+		"campo_desc": "UBICACIÓN LOGO",
+		"valor": "-"
+	},
+	{
+		"seccion": "100",
+		"ordinal": 8,
+		"campo": "certificado_path",
+		"campo_desc": "UBICACIÓN CERTIFICADO",
+		"valor": "-"
+	},
+	{
+		"seccion": "100",
+		"ordinal": 9,
+		"campo": "certificado_clave",
+		"campo_desc": "CLAVE DEL CERTIFICADO",
+		"valor": "-"
+	},
+	{
+		"seccion": "100",
+		"ordinal": 10,
+		"campo": "usuario_sol",
+		"campo_desc": "USUARIO SOL",
+		"valor": "-"
+	},
+	{
+		"seccion": "100",
+		"ordinal": 11,
+		"campo": "clave_sol",
+		"campo_desc": "CLAVE SOL",
+		"valor": "-"
+	},
+	{
+		"seccion": "100",
+		"ordinal": 12,
+		"campo": "usuario_sol_sec",
+		"campo_desc": "USUARIO SOL SECUNDARIO",
+		"valor": "-"
+	},
+	{
+		"seccion": "100",
+		"ordinal": 13,
+		"campo": "clave_sol_sec",
+		"campo_desc": "CLAVE SOL SECUNDARIO",
+		"valor": "-"
+	},
+	{
+		"seccion": "200",
+		"ordinal": 0,
+		"campo": "",
+		"campo_desc": "CONFIGURACION SERVIDOR CORREO",
+		"valor": "-"
+	},
+	{
+		"seccion": "200",
+		"ordinal": 1,
+		"campo": "host",
+		"campo_desc": "HOST",
+		"valor": "mail.viveworld.com.pe"
+	},
+	{
+		"seccion": "200",
+		"ordinal": 2,
+		"campo": "username",
+		"campo_desc": "USERNAME",
+		"valor": "ventas@viveworld.com.pe"
+	},
+	{
+		"seccion": "200",
+		"ordinal": 3,
+		"campo": "password",
+		"campo_desc": "PASSWORD",
+		"valor": "Ventas2024"
+	},
+	{
+		"seccion": "200",
+		"ordinal": 4,
+		"campo": "smtpsecure",
+		"campo_desc": "SMTPSECURE",
+		"valor": "ssl"
+	},
+	{
+		"seccion": "200",
+		"ordinal": 5,
+		"campo": "port",
+		"campo_desc": "PORT",
+		"valor": "465"
+	},
+	{
+		"seccion": "200",
+		"ordinal": 6,
+		"campo": "nombre_empresa",
+		"campo_desc": "NOMBRE EMPRESA",
+		"valor": "-"
+	},
+	{
+		"seccion": "300",
+		"ordinal": 0,
+		"campo": "",
+		"campo_desc": "WEBSERVICE SUNAT / MODO FACTURACION",
+		"valor": "-"
+	},
+	{
+		"seccion": "300",
+		"ordinal": 1,
+		"campo": "produccion",
+		"campo_desc": "PRODUCCION",
+		"valor": "https://e-factura.sunat.gob.pe/ol-ti-itcpfegem/billService?wsdl"
+	},
+	{
+		"seccion": "300",
+		"ordinal": 2,
+		"campo": "desarrollo",
+		"campo_desc": "DESARROLLO",
+		"valor": "https://e-beta.sunat.gob.pe/ol-ti-itcpfegem-beta/billService"
+	},
+	{
+		"seccion": "300",
+		"ordinal": 3,
+		"campo": "modo_facturacion",
+		"campo_desc": "MODO FACTURACION",
+		"valor": "DESARROLLO"
+	},
+	{
+		"seccion": "400",
+		"ordinal": 0,
+		"campo": "",
+		"campo_desc": "API SUNAT / GUÍAS DE REMISIÓN",
+		"valor": ""
+	},
+	{
+		"seccion": "400",
+		"ordinal": 1,
+		"campo": "client_id_desarrollo",
+		"campo_desc": "CLIENT_ID_DESARROLLO",
+		"valor": "test-85e5b0ae-255c-4891-a595-0b98c65c9854"
+	},
+	{
+		"seccion": "400",
+		"ordinal": 2,
+		"campo": "client_secret_desarrollo",
+		"campo_desc": "CLIENT_SECRET_DESARROLLO",
+		"valor": "test-Hty/M6QshYvPgItX2P0+Kw=="
+	},
+	{
+		"seccion": "400",
+		"ordinal": 3,
+		"campo": "client_id_produccion",
+		"campo_desc": "CLIENT_ID_PRODUCCION",
+		"valor": "-"
+	},
+	{
+		"seccion": "400",
+		"ordinal": 4,
+		"campo": "client_secret_produccion",
+		"campo_desc": "CLIENT_SECRET_PRODUCCION",
+		"valor": "-"
+	},
+	{
+		"seccion": "400",
+		"ordinal": 5,
+		"campo": "api_auth_desarrollo",
+		"campo_desc": "API_AUTH_DESARROLLO",
+		"valor": "https://gre-test.nubefact.com/v1"
+	},
+	{
+		"seccion": "400",
+		"ordinal": 6,
+		"campo": "api_cpe_desarrollo",
+		"campo_desc": "API_CPE_DESARROLLO",
+		"valor": "https://gre-test.nubefact.com/v1"
+	},
+	{
+		"seccion": "400",
+		"ordinal": 7,
+		"campo": "api_auth_produccion",
+		"campo_desc": "API_AUTH_PRODUCCION",
+		"valor": "https://api-seguridad.sunat.gob.pe/v1"
+	},
+	{
+		"seccion": "400",
+		"ordinal": 8,
+		"campo": "api_cpe_produccion",
+		"campo_desc": "API_CPE_PRODUCCION",
+		"valor": "https://api-cpe.sunat.gob.pe/v1"
+	},
+	{
+		"seccion": "400",
+		"ordinal": 9,
+		"campo": "modo_guia_de_remision",
+		"campo_desc": "MODO GUIA DE REMISION",
+		"valor": "DESARROLLO"
+	}
+]
