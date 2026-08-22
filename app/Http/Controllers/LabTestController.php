@@ -2,64 +2,135 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\LabTest;
+use App\Http\Requests\LabtestFormRequest;
+use App\Models\Labtest;
+use Exception;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
-class LabTestController extends Controller
+class LabtestController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    private $flash = ["msg" => '', "type" => "error", "action" => "", "data" => null];
+
+    public function index(Request $request)
     {
-        //
+        $labtests = Labtest::query();
+
+        /* SEARCH */
+        if ($request->filled('search')) {
+            $labtests->where(function ($query) use ($request) {
+                $query->where('code', 'like', '%'.$request->search.'%')
+                    ->orWhere('name', 'like', '%'.$request->search.'%');
+            });
+        }
+
+        /* SORT */
+        if ($request->filled('sortby')) {
+            $sortby = explode('-', $request->sortby);
+            $labtests->orderBy($sortby[0], $sortby[1] ?? 'asc');
+        } else {
+            $labtests->orderBy('name', 'asc');
+        }
+
+        $perPage = (int) ($request->per_page ?? 50);
+        if ($perPage < 2 || $perPage > 200) {
+            $perPage = 10;
+        }
+
+        $labtests = $labtests->paginate($perPage)->onEachSide(1)->withQueryString();
+
+        return Inertia::render('labtests/index', [
+            'labtests' => $labtests,
+            'qrystr' => $request->only(['search', 'sortby', 'page', 'per_page']),
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function store(LabtestFormRequest $request)
     {
-        //
+        // dd($request->all());
+        try {
+            $this->flash['action'] = "createLabtest";
+
+            $labtest = Labtest::create([
+                'code' => $request->input('code'),
+                'name' => $request->input('name'),
+                'area' => $request->input('area'),
+                'sample' => $request->input('sample'),
+                'description' => $request->input('description'),
+            ]);
+
+            if ($labtest) {
+                $this->flash['msg'] = 'El examen fue creado satisfactoriamente';
+                $this->flash['type'] = 'success';
+                $this->flash['data'] = $labtest;
+            } else {
+                $this->flash['msg'] = 'No se pudo crear el examen';
+            }
+
+            return session()->flash('flash', $this->flash);
+        } catch (Exception $e) {
+            $this->flash['msg'] = 'Error: ' . $e->getMessage();
+            return session()->flash('flash', $this->flash);
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function update(LabtestFormRequest $request, Labtest $labtest)
     {
-        //
+        try {
+            $this->flash['action'] = "updateLabtest";
+
+            $labtest->update([
+                'code' => $request->input('code'),
+                'name' => $request->input('name'),
+                'area' => $request->input('area'),
+                'sample' => $request->input('sample'),
+                'description' => $request->input('description'),
+            ]);
+
+            if ($labtest) {
+                $this->flash['msg'] = 'El examen fue actualizado satisfactoriamente';
+                $this->flash['type'] = 'success';
+                $this->flash['data'] = $labtest;
+            } else {
+                $this->flash['msg'] = 'No se pudo actualizar el examen';
+            }
+
+            return session()->flash('flash', $this->flash);
+        } catch (Exception $e) {
+            $this->flash['msg'] = 'Error: ' . $e->getMessage();
+            return session()->flash('flash', $this->flash);
+        }
+    }
+    
+    public function destroy(Labtest $labtest)
+    {
+        try {
+            $labtest->delete();
+            $this->flash['msg'] = 'El examen fue eliminado satisfactoriamente';
+            $this->flash['type'] = 'success';
+        } catch (Exception $e) {
+            $this->flash['msg'] = 'Error: ' . $e->getMessage();
+        }
+        return session()->flash('flash', $this->flash);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(LabTest $labTest)
+    public function getLabtest(Labtest $labtest)
     {
-        //
+        return response()->json($labtest);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(LabTest $labTest)
+    public function setStatus(Labtest $labtest)
     {
-        //
-    }
+        try {
+            $labtest->status = $labtest->status ? 0 : 1;
+            $labtest->save();
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, LabTest $labTest)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(LabTest $labTest)
-    {
-        //
+            $this->flash['msg'] = 'El estado del examen fue actualizado satisfactoriamente';
+            $this->flash['type'] = 'success';
+            $this->flash['data'] = $labtest;
+        } catch (Exception $e) {
+            $this->flash['msg'] = 'Error: ' . $e->getMessage();
+        }
+        return session()->flash('flash', $this->flash);
     }
 }

@@ -4,14 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Labtest extends Model
+class LabprofilePrice extends Model
 {
     protected $fillable = [
-        "code",
-        "sample",
-        "area",
-        "name",
-        "description",
+        "labprofile_id",
+        "price",
+        "concept",
         "status",
     ];
 }

@@ -1,0 +1,524 @@
+[
+	{
+		"code": "LT-001",
+		"name": "Ácido úrico",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-002",
+		"name": "Bilirrubina total y fraccionada",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-003",
+		"name": "Calcio sérico",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-004",
+		"name": "Colesterol total",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-005",
+		"name": "Creatinina",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-006",
+		"name": "Depuración de creatinina",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-007",
+		"name": "Electrolitos (Na, K, Cl)",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-008",
+		"name": "Fosfatasa Alcalina (FA)",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-009",
+		"name": "Gamma Glutamil Transpeptidasa (GGT)",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-010",
+		"name": "Glucosa basal",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-011",
+		"name": "Glucosa post prandial",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-012",
+		"name": "Hemoglobina glucosilada",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-013",
+		"name": "Microalbuminuria orina 24h",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-014",
+		"name": "Proteina total y fraccionada",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-015",
+		"name": "Proteinuria orina 24h",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-016",
+		"name": "Tolerancia a la glucosa",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-017",
+		"name": "Transaminasa TGO",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-018",
+		"name": "Transaminasa TGP",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-019",
+		"name": "Triglicéridos",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-020",
+		"name": "Úrea",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-021",
+		"name": "Vitamina D",
+		"area": "Bioquímica",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-022",
+		"name": "Hemoglobina",
+		"area": "Hematología",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-023",
+		"name": "Hematocrito",
+		"area": "Hematología",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-024",
+		"name": "Hemograma completo",
+		"area": "Hematología",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-025",
+		"name": "Recuento de plaquetas",
+		"area": "Hematología",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-026",
+		"name": "Recuento de reticulocitos",
+		"area": "Hematología",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-027",
+		"name": "Tiempo de Coagulación (TC) y Sangría (TS)",
+		"area": "Hematología",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-028",
+		"name": "Tiempo de Protrombina (TP)",
+		"area": "Hematología",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-029",
+		"name": "Tiempo de Tromboplastina (TTP)",
+		"area": "Hematología",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-030",
+		"name": "Velocidad de Sedimentación Globular (VSG)",
+		"area": "Hematología",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-031",
+		"name": "Grupo sanguíneo y RH",
+		"area": "Hematología",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-032",
+		"name": "AFP",
+		"area": "Marcadores Tumorales",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-033",
+		"name": "CA 125",
+		"area": "Marcadores Tumorales",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-034",
+		"name": "CA 19.9",
+		"area": "Marcadores Tumorales",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-035",
+		"name": "CA 15.3",
+		"area": "Marcadores Tumorales",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-036",
+		"name": "CEA",
+		"area": "Marcadores Tumorales",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-037",
+		"name": "PSA total",
+		"area": "Marcadores Tumorales",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-038",
+		"name": "PSA total y PSA libre",
+		"area": "Marcadores Tumorales",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-039",
+		"name": "Aglutinaciones",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-040",
+		"name": "Antiestreptolisina O - ASO",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-041",
+		"name": "Anti DNA ds",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-042",
+		"name": "Anti ENA",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-043",
+		"name": "Anti Nucleares - ANA",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-044",
+		"name": "Anticuerpo anti-tiroglobulina (anti TG)",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-045",
+		"name": "Anticuerpo anti-peroxidasa tioidea (anti TPO)",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-046",
+		"name": "Anti CCP",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-047",
+		"name": "Factor reumatoideo",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-048",
+		"name": "Proteina C Reactiva - PCR",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-049",
+		"name": "RPR - VDRL (Sífilis)",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-050",
+		"name": "Hepatitis A - IgM",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-051",
+		"name": "Hepatitis A - Anticuerpo total",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-052",
+		"name": "Hepatitis B - HBsAg",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-053",
+		"name": "Hepatitis B - HBeAg",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-054",
+		"name": "Hepatitis B - Anti HBc IgM",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-055",
+		"name": "Hepatitis B - Anti HBc",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-056",
+		"name": "Hepatitis B - Anti HBs",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-057",
+		"name": "Hepatitis C - Anticuerpo total",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-058",
+		"name": "HIV 1-2 (Ac-Ag)",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-059",
+		"name": "H. Pylori, Anticuerpos (IgG, IgM)",
+		"area": "Inmunología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-060",
+		"name": "Coprológico funcional",
+		"area": "Microbiología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-061",
+		"name": "Cultivo de orina - Urocultivo",
+		"area": "Microbiología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-062",
+		"name": "Cultivo de semen",
+		"area": "Microbiología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-063",
+		"name": "Cultivo de secreción vaginal",
+		"area": "Microbiología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-064",
+		"name": "Exámen completo de orina",
+		"area": "Microbiología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-065",
+		"name": "Hongos (KOH)",
+		"area": "Microbiología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-066",
+		"name": "Investigación de ácaros",
+		"area": "Microbiología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-067",
+		"name": "Parasitológico directo de heces",
+		"area": "Microbiología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-068",
+		"name": "Reacción inflamatoria de heces",
+		"area": "Microbiología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-069",
+		"name": "Test de Graham",
+		"area": "Microbiología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-070",
+		"name": "Thevenon en heces",
+		"area": "Microbiología",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-071",
+		"name": "Ácido fólico",
+		"area": "Estudio de Anemias",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-072",
+		"name": "Ferritina",
+		"area": "Estudio de Anemias",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-073",
+		"name": "Vitamina B12",
+		"area": "Estudio de Anemias",
+		"sample": "otro"
+	},
+	{
+		"code": "LT-074",
+		"name": "ACTH",
+		"area": "Hormona",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-075",
+		"name": "Cortisol",
+		"area": "Hormona",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-076",
+		"name": "DHEAS",
+		"area": "Hormona",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-077",
+		"name": "Estradiol",
+		"area": "Hormona",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-078",
+		"name": "FSH",
+		"area": "Hormona",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-079",
+		"name": "LH",
+		"area": "Hormona",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-080",
+		"name": "Peptido C",
+		"area": "Hormona",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-081",
+		"name": "Progesterona",
+		"area": "Hormona",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-082",
+		"name": "Prolactina",
+		"area": "Hormona",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-083",
+		"name": "Testosterona total",
+		"area": "Hormona",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-084",
+		"name": "TSH",
+		"area": "Hormona",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-085",
+		"name": "T4L",
+		"area": "Hormona",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-086",
+		"name": "T3L",
+		"area": "Hormona",
+		"sample": "Sangre"
+	},
+	{
+		"code": "LT-087",
+		"name": "Sub unidad beta-HCG",
+		"area": "Hormona",
+		"sample": "Sangre"
+	}
+]

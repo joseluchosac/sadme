@@ -27,14 +27,6 @@ export interface MainNavItem extends NavItem {
   subItems?: NavSubItem[] | null;
 }
 
-export interface Currency {
-  id: number;
-  code: string;
-  name: string;
-  symbol: string;
-  status: number;
-}
-
 export interface NavSubItem {
   title: string;
   url: string;
@@ -48,17 +40,6 @@ export interface SharedData {
   quote: { message: string; author: string };
   auth: Auth;
   [key: string]: unknown;
-}
-
-export interface Identity {
-  id: number | null;
-  code: string;
-  name: string;
-  long_name: string;
-  status: number;
-  long: number;
-  created_at?: string;
-  updated_at?: string;
 }
 
 export interface User {
@@ -193,4 +174,31 @@ export type CompanySetting = {
   valor: string;
   created_at: string;
   updated_at: string;
+}
+
+// LAB TESTS
+export interface Labtest {
+  id: number;
+  code: string;
+  name: string;
+  area: string;
+  sample: string;
+  status: number;
+  description?: string;
+  created_at?: string;
+  updated_at?: string;
+}
+
+export interface LabtestItem extends Labtest {
+}
+
+export interface LabtestsPaginated extends Paginated {
+  data: LabtestItem[];
+}
+
+export type LabtestsQrystr = Qrystr & {
+}
+
+export interface LabtestData extends Labtest {
+
 }

@@ -2,20 +2,20 @@
 
 namespace Database\Seeders;
 
-use App\Models\Labtest;
+use App\Models\Labprofile;
 use Illuminate\Database\Seeder;
 
-class LabtestSeeder extends Seeder
+class LabprofileSeeder extends Seeder
 {
 
     public function run(): void
     {
-        $jsonPath = database_path('seeders/data/labtests.json');
+        $jsonPath = database_path('seeders/data/labprofiles.json');
         $json = file_get_contents($jsonPath);
         $data = json_decode($json, true);
 
         foreach ($data as $item){
-            Labtest::create($item);
+            Labprofile::create($item);
         }
     }
 }

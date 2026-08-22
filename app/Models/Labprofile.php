@@ -4,12 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Labtest extends Model
+class Labprofile extends Model
 {
     protected $fillable = [
         "code",
-        "sample",
-        "area",
         "name",
         "description",
         "status",

@@ -1,0 +1,8 @@
+[
+  { "code": "LP-001", "name": "Perfil de coagulación"},
+  { "code": "LP-002", "name": "Perfil hepático"},
+  { "code": "LP-003", "name": "Perfil de lipídico completo"},
+  { "code": "LP-004", "name": "Perfil preoperatorio"},
+  { "code": "LP-005", "name": "Perfil renal"},
+  { "code": "LP-006", "name": "Perfil tiroideo"}
+]

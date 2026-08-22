@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\LabtestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -21,10 +21,11 @@ Route::get('/', function (Request $request) {
 })->name('home');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('dashboard', function () {
-        return Inertia::render('dashboard');
-    })->name('dashboard');
-    // Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    // lab tests
+    Route::resource('labtests', LabtestController::class)->except(['create','show','edit']);
+    Route::get('labtests/{labtest}', [LabtestController::class, 'getLabtest'])->name('labtests.get');
+    Route::patch('labtests/set-status/{labtest}', [LabtestController::class, 'setStatus'])->name('labtests.set-status');
 });
 
 require __DIR__.'/settings.php';

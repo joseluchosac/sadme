@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lab_tests', function (Blueprint $table) {
+        Schema::create('labprofiles', function (Blueprint $table) {
             $table->id();
             $table->string('code',6)->unique();
-            $table->string('sample',100); // muestra
-            $table->string('area',100);
-            $table->string('name')->unique();
+            $table->string('name');
+            $table->string('description')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();
         });
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lab_tests');
+        Schema::dropIfExists('labprofiles');
     }
 };
