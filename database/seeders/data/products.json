@@ -1,0 +1,653 @@
+[
+	{
+		"code": "LT-001",
+		"name": "Ácido úrico",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 25.00
+	},
+	{
+		"code": "LT-002",
+		"name": "Bilirrubina total y fraccionada",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 15.00
+	},
+	{
+		"code": "LT-003",
+		"name": "Calcio sérico",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 25.00
+	},
+	{
+		"code": "LT-004",
+		"name": "Colesterol total",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 12.00
+	},
+	{
+		"code": "LT-005",
+		"name": "Creatinina",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 13.00
+	},
+	{
+		"code": "LT-006",
+		"name": "Depuración de creatinina",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 26.00
+	},
+	{
+		"code": "LT-007",
+		"name": "Electrolitos (Na, K, Cl)",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 40.00
+	},
+	{
+		"code": "LT-008",
+		"name": "Fosfatasa Alcalina (FA)",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 12.00
+	},
+	{
+		"code": "LT-009",
+		"name": "Gamma Glutamil Transpeptidasa (GGT)",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 25.00
+	},
+	{
+		"code": "LT-010",
+		"name": "Glucosa basal",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 12.00
+	},
+	{
+		"code": "LT-011",
+		"name": "Glucosa post prandial",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 26.00
+	},
+	{
+		"code": "LT-012",
+		"name": "Hemoglobina glucosilada",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 39.00
+	},
+	{
+		"code": "LT-013",
+		"name": "Microalbuminuria orina 24h",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 25.00
+	},
+	{
+		"code": "LT-014",
+		"name": "Proteina total y fraccionada",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 15.00
+	},
+	{
+		"code": "LT-015",
+		"name": "Proteinuria orina 24h",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 25.00
+	},
+	{
+		"code": "LT-016",
+		"name": "Tolerancia a la glucosa",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 26.00
+	},
+	{
+		"code": "LT-017",
+		"name": "Transaminasa TGO",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 28.00
+	},
+	{
+		"code": "LT-018",
+		"name": "Transaminasa TGP",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 28.00
+	},
+	{
+		"code": "LT-019",
+		"name": "Triglicéridos",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 12.00
+	},
+	{
+		"code": "LT-020",
+		"name": "Úrea",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 13.00
+	},
+	{
+		"code": "LT-021",
+		"name": "Vitamina D",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 185.00
+	},
+	{
+		"code": "LT-022",
+		"name": "Hemoglobina",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 15.00
+	},
+	{
+		"code": "LT-023",
+		"name": "Hematocrito",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 13.00
+	},
+	{
+		"code": "LT-024",
+		"name": "Hemograma completo",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 18.00
+	},
+	{
+		"code": "LT-025",
+		"name": "Recuento de plaquetas",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 18.00
+	},
+	{
+		"code": "LT-026",
+		"name": "Recuento de reticulocitos",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 17.00
+	},
+	{
+		"code": "LT-027",
+		"name": "Tiempo de Coagulación (TC) y Sangría (TS)",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 18.00
+	},
+	{
+		"code": "LT-028",
+		"name": "Tiempo de Protrombina (TP)",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 29.00
+	},
+	{
+		"code": "LT-029",
+		"name": "Tiempo de Tromboplastina (TTP)",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 34.00
+	},
+	{
+		"code": "LT-030",
+		"name": "Velocidad de Sedimentación Globular (VSG)",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 16.00
+	},
+	{
+		"code": "LT-031",
+		"name": "Grupo sanguíneo y RH",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 15.00
+	},
+	{
+		"code": "LT-032",
+		"name": "AFP",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 43.00
+	},
+	{
+		"code": "LT-033",
+		"name": "CA 125",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 50.00
+	},
+	{
+		"code": "LT-034",
+		"name": "CA 19.9",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 58.00
+	},
+	{
+		"code": "LT-035",
+		"name": "CA 15.3",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 52.00
+	},
+	{
+		"code": "LT-036",
+		"name": "CEA",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 40.00
+	},
+	{
+		"code": "LT-037",
+		"name": "PSA total",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 40.00
+	},
+	{
+		"code": "LT-038",
+		"name": "PSA total y PSA libre",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 80.00
+	},
+	{
+		"code": "LT-039",
+		"name": "Aglutinaciones",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 20.00
+	},
+	{
+		"code": "LT-040",
+		"name": "Antiestreptolisina O - ASO",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 21.00
+	},
+	{
+		"code": "LT-041",
+		"name": "Anti DNA ds",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 45.00
+	},
+	{
+		"code": "LT-042",
+		"name": "Anti ENA",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 220.00
+	},
+	{
+		"code": "LT-043",
+		"name": "Anti Nucleares - ANA",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 45.00
+	},
+	{
+		"code": "LT-044",
+		"name": "Anticuerpo anti-tiroglobulina (anti TG)",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 43.00
+	},
+	{
+		"code": "LT-045",
+		"name": "Anticuerpo anti-peroxidasa tioidea (anti TPO)",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 43.00
+	},
+	{
+		"code": "LT-046",
+		"name": "Anti CCP",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 145.00
+	},
+	{
+		"code": "LT-047",
+		"name": "Factor reumatoideo",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 18.00
+	},
+	{
+		"code": "LT-048",
+		"name": "Proteina C Reactiva - PCR",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 18.00
+	},
+	{
+		"code": "LT-049",
+		"name": "RPR - VDRL (Sífilis)",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 16.00
+	},
+	{
+		"code": "LT-050",
+		"name": "Hepatitis A - IgM",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 54.00
+	},
+	{
+		"code": "LT-051",
+		"name": "Hepatitis A - Anticuerpo total",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 52.00
+	},
+	{
+		"code": "LT-052",
+		"name": "Hepatitis B - HBsAg",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 45.00
+	},
+	{
+		"code": "LT-053",
+		"name": "Hepatitis B - HBeAg",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 49.00
+	},
+	{
+		"code": "LT-054",
+		"name": "Hepatitis B - Anti HBc IgM",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 46.00
+	},
+	{
+		"code": "LT-055",
+		"name": "Hepatitis B - Anti HBc",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 45.00
+	},
+	{
+		"code": "LT-056",
+		"name": "Hepatitis B - Anti HBs",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 37.00
+	},
+	{
+		"code": "LT-057",
+		"name": "Hepatitis C - Anticuerpo total",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 54.00
+	},
+	{
+		"code": "LT-058",
+		"name": "HIV 1-2 (Ac-Ag)",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 38.00
+	},
+	{
+		"code": "LT-059",
+		"name": "H. Pylori, Anticuerpos (IgG, IgM)",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 88.00
+	},
+	{
+		"code": "LT-060",
+		"name": "Coprológico funcional",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 25.00
+	},
+	{
+		"code": "LT-061",
+		"name": "Cultivo de orina - Urocultivo",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 40.00
+	},
+	{
+		"code": "LT-062",
+		"name": "Cultivo de semen",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 40.00
+	},
+	{
+		"code": "LT-063",
+		"name": "Cultivo de secreción vaginal",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 40.00
+	},
+	{
+		"code": "LT-064",
+		"name": "Exámen completo de orina",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 15.00
+	},
+	{
+		"code": "LT-065",
+		"name": "Hongos (KOH)",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 15.00
+	},
+	{
+		"code": "LT-066",
+		"name": "Investigación de ácaros",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 0.00
+	},
+	{
+		"code": "LT-067",
+		"name": "Parasitológico directo de heces",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 11.00
+	},
+	{
+		"code": "LT-068",
+		"name": "Reacción inflamatoria de heces",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 15.00
+	},
+	{
+		"code": "LT-069",
+		"name": "Test de Graham",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 15.00
+	},
+	{
+		"code": "LT-070",
+		"name": "Thevenon en heces",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 14.00
+	},
+	{
+		"code": "LT-071",
+		"name": "Ácido fólico",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 40.00
+	},
+	{
+		"code": "LT-072",
+		"name": "Ferritina",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 37.00
+	},
+	{
+		"code": "LT-073",
+		"name": "Vitamina B12",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 43.00
+	},
+	{
+		"code": "LT-074",
+		"name": "ACTH",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 68.00
+	},
+	{
+		"code": "LT-075",
+		"name": "Cortisol",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 35.00
+	},
+	{
+		"code": "LT-076",
+		"name": "DHEAS",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 40.00
+	},
+	{
+		"code": "LT-077",
+		"name": "Estradiol",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 35.00
+	},
+	{
+		"code": "LT-078",
+		"name": "FSH",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 35.00
+	},
+	{
+		"code": "LT-079",
+		"name": "LH",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 35.00
+	},
+	{
+		"code": "LT-080",
+		"name": "Peptido C",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 69.00
+	},
+	{
+		"code": "LT-081",
+		"name": "Progesterona",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 37.00
+	},
+	{
+		"code": "LT-082",
+		"name": "Prolactina",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 40.00
+	},
+	{
+		"code": "LT-083",
+		"name": "Testosterona total",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 38.00
+	},
+	{
+		"code": "LT-084",
+		"name": "TSH",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 34.00
+	},
+	{
+		"code": "LT-085",
+		"name": "T4L",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 36.00
+	},
+	{
+		"code": "LT-086",
+		"name": "T3L",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 36.00
+	},
+	{
+		"code": "LT-087",
+		"name": "Sub unidad beta-HCG",
+		"product_type_id": 4,
+		"unit_code": "ZZ",
+		"price": 0.00
+	},
+	{
+		"code": "LP-001",
+		"name": "Perfil de coagulación",
+		"product_type_id": 5,
+		"unit_code": "ZZ",
+		"price": 130.00
+	},
+	{
+		"code": "LP-002",
+		"name": "Perfil hepático",
+		"product_type_id": 5,
+		"unit_code": "ZZ",
+		"price": 70.00
+	},
+	{
+		"code": "LP-003",
+		"name": "Perfil lipídico completo",
+		"product_type_id": 5,
+		"unit_code": "ZZ",
+		"price": 40.00
+	},
+	{
+		"code": "LP-004",
+		"name": "Perfil preoperatorio",
+		"product_type_id": 5,
+		"unit_code": "ZZ",
+		"price": 140.00
+	},
+	{
+		"code": "LP-005",
+		"name": "Perfil renal",
+		"product_type_id": 5,
+		"unit_code": "ZZ",
+		"price": 75.00
+	},
+	{
+		"code": "LP-006",
+		"name": "Perfil tiroideo",
+		"product_type_id": 5,
+		"unit_code": "ZZ",
+		"price": 85.00
+	}
+]

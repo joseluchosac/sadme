@@ -202,3 +202,54 @@ export type LabtestsQrystr = Qrystr & {
 export interface LabtestData extends Labtest {
 
 }
+
+// units
+export interface Unit {
+  id: number,
+  code: string;
+  abb: string;
+  name: string;
+  status: boolean;
+  created_at?: string;
+  updated_at?: string;
+}
+
+// product_types
+export interface ProductType {
+  id: number,
+  code: string;
+  name: string;
+  status: boolean;
+  created_at?: string;
+  updated_at?: string;
+}
+
+// products
+export interface Product {
+  id: number;
+  code: string;
+  name: string;
+  unit_code: string;
+  price: string;
+  min_stock: number;
+  brand: string;
+  barcode: string;
+  product_type_id: number;
+  affectation_type_id: number;
+  description: string;
+  status: number;
+  created_at?: string;
+  updated_at?: string;
+}
+export interface ProductData extends Product {
+
+}
+export interface ProductItem extends Product {
+  product_type_name: string;
+  affectation_type_name: string;
+}
+export interface ProductsPaginated extends Paginated {
+  data: ProductItem[];
+}
+export type ProductsQrystr = Qrystr & {
+}

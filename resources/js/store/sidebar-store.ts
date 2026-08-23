@@ -1,5 +1,5 @@
 import { MainNavItem } from '@/types';
-import { House, Settings, ShieldX } from 'lucide-react';
+import { House, Package, Settings, ShieldX } from 'lucide-react';
 import { create } from 'zustand';
 
 type SidebarState = {
@@ -34,6 +34,23 @@ const mainNavItemsInit: MainNavItem[] = [
         url: '/labtests',
         can: null,
       },
+    ]
+  },
+  // PRODUCTS
+  {
+    title: 'Productos',
+    url: '/',
+    rootUrl: '/',
+    icon: Package,
+    isActive: false,
+    isOpen: false,
+    can: null,
+    subItems:[
+      {
+        title: 'Productos',
+        url: '/products',
+        can: null,
+      }
     ]
   },
   // ADMINISTRACION

@@ -15,11 +15,14 @@ class DatabaseSeeder extends Seeder
             UbigeoSeeder::class,
             RoleSeeder::class,
             UserSeeder::class,
+            UnitSeeder::class,
             CompanySettingSeeder::class,
+            ProductTypeSeeder::class,
             LabtestSeeder::class,
             LabprofileSeeder::class,
+            ProductSeeder::class,
         ]);
-        
+
         // User::factory(10)->create();
 
         // User::factory()->create([
