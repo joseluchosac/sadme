@@ -1,7 +1,7 @@
 import { TableColumn } from '@/types';
 import { create } from 'zustand';
 
-type UsersTableState = {
+type UsersState = {
   columns: TableColumn[];
   selectedRowId: number;
   setSelectedRowId: (value: number) => void;
@@ -22,7 +22,7 @@ const initialState = {
   selectedRowId: 0,
 };
 
-export const useUsersTableConfigStore = create<UsersTableState>((set) => ({
+export const useUsersStore = create<UsersState>((set) => ({
   ...initialState,
   setSelectedRowId: (value: number) => set({ selectedRowId: value }),
 }));

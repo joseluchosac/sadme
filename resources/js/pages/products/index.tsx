@@ -1,5 +1,5 @@
 import AppLayout from '@/layouts/app-layout';
-import { Flash, MsgType, ProductsPaginated, ProductsQrystr, ProductType, Unit, type BreadcrumbItem } from '@/types';
+import { AffectationType, Flash, MsgType, ProductsPaginated, ProductsQrystr, ProductType, Unit, type BreadcrumbItem } from '@/types';
 import { Head, router, useForm, usePage } from '@inertiajs/react';
 import { CirclePlus, FileDown, RotateCcw } from 'lucide-react';
 import ProductsTable from './components/products-table';
@@ -13,6 +13,8 @@ import { FilterDialog } from './components/filter-dialog';
 import { limpiarObjeto } from '@/lib/utils';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { useProductsStore } from '@/store/products-store';
+import useService from '@/hooks/use-service';
+import { useCatalogsStore } from '@/store/catalogs-store';
 
 const breadcrumbs: BreadcrumbItem[] = [
   {
@@ -23,6 +25,8 @@ const breadcrumbs: BreadcrumbItem[] = [
 
 const productsQrystrInit: ProductsQrystr = {
   search: '',
+  product_type_id: null,
+  status: null,
   sortby: null,
   page: null,
   per_page: null,
@@ -30,20 +34,32 @@ const productsQrystrInit: ProductsQrystr = {
 
 interface IndexProps {
   products: ProductsPaginated;
-  productTypes: ProductType[];
-  units: Unit[];
   qrystr: ProductsQrystr;
 }
 
-export default function Index({ products, productTypes, units, qrystr }: IndexProps) {
-  const view = useProductsStore(state => state.view)
-  const setView = useProductsStore(state => state.setView)
-
+export default function Index({ products, qrystr }: IndexProps) {
   const [firstRender, setFirstRender] = useState(true);
+  const view = useProductsStore(state => state.view)
+  const setView = useProductsStore(state => state.setView);
+  const {
+    productTypes,
+    setProductTypes,
+    units,
+    setUnits,
+    affectationTypes,
+    setAffectationTypes,
+  } = useCatalogsStore(state => state)
+
+  const {getProductTypes, data: productTypesData} = useService<ProductType[]>()
+  const {getUnits, data: unitsData} = useService<Unit[]>()
+  const {getAffectationTypes, data: affectationTypesData} = useService<AffectationType[]>()
+
   const { flash } = usePage<{ flash: Flash }>().props;
 
   const productsQrystr = useForm<ProductsQrystr>({
     search: qrystr.search || '',
+    product_type_id: qrystr.product_type_id || null,
+    status: qrystr.status || null,
     sortby: qrystr.sortby || null,
     page: qrystr.page || null,
     per_page: qrystr.per_page || null,
@@ -56,6 +72,8 @@ export default function Index({ products, productTypes, units, qrystr }: IndexPr
   const applyFilter = () => {
     const newQueryString = {
       ...(productsQrystr.data.search && { search: productsQrystr.data.search }),
+      ...(productsQrystr.data.product_type_id && { product_type_id: productsQrystr.data.product_type_id }),
+      ...(productsQrystr.data.status && { status: productsQrystr.data.status }),
       ...(productsQrystr.data.sortby && { sortby: productsQrystr.data.sortby }),
       ...(productsQrystr.data.page && { page: productsQrystr.data.page }),
       ...(productsQrystr.data.per_page && { per_page: productsQrystr.data.per_page }),
@@ -93,6 +111,15 @@ export default function Index({ products, productTypes, units, qrystr }: IndexPr
       applyFilter();
     } else {
       setFirstRender(false);
+      if(!productTypes){
+        getProductTypes();
+      }
+      if(!units){
+        getUnits();
+      }
+      if(!affectationTypes){
+        getAffectationTypes();
+      }
     };
     return () => setView('table')
   }, [productsQrystr.data]);
@@ -101,6 +128,20 @@ export default function Index({ products, productTypes, units, qrystr }: IndexPr
     if (!flash) return;
     toast[flash?.type as MsgType](flash.msg);
   }, [flash]);
+
+  useEffect(() => {
+    if (!productTypesData) return;
+    setProductTypes(productTypesData)
+  }, [productTypesData]);
+
+  useEffect(() => {
+    if (!unitsData) return;
+    setUnits(unitsData)
+  }, [unitsData]);
+  useEffect(() => {
+    if (!affectationTypesData) return;
+    setAffectationTypes(affectationTypesData)
+  }, [affectationTypesData]);
 
   return (
     <AppLayout breadcrumbs={breadcrumbs}>
@@ -130,7 +171,7 @@ export default function Index({ products, productTypes, units, qrystr }: IndexPr
               <RotateCcw /><span className='hidden lg:block'>reset</span>
             </Button>
             <Button onClick={() => { setView('form') }}>
-              <CirclePlus /> <div className='hidden lg:block'>Agregar examen</div><div className='block lg:hidden'>Agregar</div>
+              <CirclePlus /> <div className='hidden lg:block'>Agregar producto</div><div className='block lg:hidden'>Agregar</div>
             </Button>
           </div>
         </div>
@@ -147,10 +188,7 @@ export default function Index({ products, productTypes, units, qrystr }: IndexPr
       {/* SECCION FORMULARIO */}
       <section className={`flex h-full flex-col gap-4 rounded-xl p-4 ${view === 'form' ? '' : 'hidden'}`}>
         {view === 'form' && (
-          <ProductForm
-            productTypes={productTypes}
-            units={units}
-          />
+          <ProductForm />
         )}
       </section>
     </AppLayout>

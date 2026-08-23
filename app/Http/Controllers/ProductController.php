@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductFormRequest;
 use App\Models\Product;
-use App\Models\ProductType;
-use App\Models\Unit;
 use Exception;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -17,8 +15,6 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $products = Product::query()->with(['productType:id,code,name', 'unit']);
-        $productTypes = ProductType::select(['id','code','name'])->get();
-        $units = Unit::select(['id','code','abb','name','status'])->get();
 
         /* SEARCH */
         if ($request->filled('search')) {
@@ -26,6 +22,15 @@ class ProductController extends Controller
                 $query->where('code', 'like', '%'.$request->search.'%')
                     ->orWhere('name', 'like', '%'.$request->search.'%');
             });
+        }
+
+        /* EQUAL */
+        if ($request->filled('product_type_id')) {
+            $products->where('product_type_id', $request->product_type_id);
+        }
+
+        if ($request->filled('status')) {
+            $products->where('status', $request->status);
         }
 
         /* SORT */
@@ -37,7 +42,7 @@ class ProductController extends Controller
         }
 
         $perPage = (int) ($request->per_page ?? 50);
-        if ($perPage < 2 || $perPage > 200) {
+        if ($perPage < 2 || $perPage > 500) {
             $perPage = 10;
         }
 
@@ -62,9 +67,7 @@ class ProductController extends Controller
         });
         return Inertia::render('products/index', [
             'products' => $products,
-            'productTypes' => $productTypes,
-            'units' => $units,
-            'qrystr' => $request->only(['search', 'sortby', 'page', 'per_page']),
+            'qrystr' => $request->only(['search', 'product_type_id', 'status', 'sortby', 'page', 'per_page']),
         ]);
     }
 
@@ -156,7 +159,6 @@ class ProductController extends Controller
 
     public function setStatus(Product $product)
     {
-        // dd($product->toArray());
         try {
             $product->status = $product->status ? 0 : 1;
             $product->save();

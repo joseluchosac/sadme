@@ -7,25 +7,6 @@ export default function useService<T>() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const getLabtest = async (id: number) => {
-    setIsLoading(true);
-    setError(null);
-    setData(null);
-    try {
-      const resp = await axios.get(route('labtests.get', id));
-      if (resp.data) {
-        setData(resp.data);
-      } else {
-        setError(resp.data.message || 'Error en la consulta');
-      }
-    } catch (err: any) {
-      // setError(err || 'Error en la solicitud');
-      setError(err || 'Error al obtener el examen de laboratorio');
-    } finally {
-      setIsLoading(false);
-    }
-  }
-
   const getProduct = async (id: number) => {
     setIsLoading(true);
     setError(null);
@@ -45,6 +26,61 @@ export default function useService<T>() {
     }
   }
 
+  const getProductTypes = async () => {
+    setIsLoading(true);
+    setError(null);
+    setData(null);
+    try {
+      const resp = await axios.get(route('product-types.get-all'));
+      if (resp.data) {
+        setData(resp.data);
+      } else {
+        setError(resp.data.message || 'Error en la consulta');
+      }
+    } catch (err: any) {
+      // setError(err || 'Error en la solicitud');
+      setError(err || 'Error al obtener los tipos de producto');
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  const getUnits = async () => {
+    setIsLoading(true);
+    setError(null);
+    setData(null);
+    try {
+      const resp = await axios.get(route('catalogs.get-units'));
+      if (resp.data) {
+        setData(resp.data);
+      } else {
+        setError(resp.data.message || 'Error en la consulta');
+      }
+    } catch (err: any) {
+      // setError(err || 'Error en la solicitud');
+      setError(err || 'Error al obtener unidades');
+    } finally {
+      setIsLoading(false);
+    }
+  }
+  const getAffectationTypes = async () => {
+    setIsLoading(true);
+    setError(null);
+    setData(null);
+    try {
+      const resp = await axios.get(route('catalogs.get-affectation-types'));
+      if (resp.data) {
+        setData(resp.data);
+      } else {
+        setError(resp.data.message || 'Error en la consulta');
+      }
+    } catch (err: any) {
+      // setError(err || 'Error en la solicitud');
+      setError(err || 'Error al obtener unidades');
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
 
   const reset = () => {
@@ -55,8 +91,10 @@ export default function useService<T>() {
     data,
     isLoading,
     error,
-    getLabtest,
     getProduct,
+    getProductTypes,
+    getUnits,
+    getAffectationTypes,
     reset
   };
 }

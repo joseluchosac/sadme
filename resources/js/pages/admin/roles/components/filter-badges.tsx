@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { useRolesTableConfigStore } from "@/store/roles-table-config-store";
+import { useRolesStore } from "@/store/roles-store";
 import { Qrystr } from "@/types";
 import { InertiaFormProps} from "@inertiajs/react";
 import { CircleX } from "lucide-react";
@@ -10,7 +10,7 @@ interface FilterBadgesProps {
 
 
 export default function FilterBadges({ rolesQrystr }: FilterBadgesProps) {
-  const columns = useRolesTableConfigStore(state => state.columns);
+  const columns = useRolesStore(state => state.columns);
 
   const currentSortField = rolesQrystr.data.sortby?.split('-')[0];
   const currentSortOrder = rolesQrystr.data.sortby?.split('-')[1] ?? 'asc';

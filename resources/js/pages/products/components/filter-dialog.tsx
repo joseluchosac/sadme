@@ -14,6 +14,7 @@ import { Field, FieldGroup, FieldLabel, FieldLegend, FieldSet } from "@/componen
 import { Label } from "@/components/ui/label"
 import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { useCatalogsStore } from "@/store/catalogs-store"
 import { useProductsStore } from "@/store/products-store"
 import { 
   // Category,
@@ -23,12 +24,12 @@ import { Filter } from "lucide-react"
 
 interface FilterDialogProps {
   productsQrystr: InertiaFormProps<ProductsQrystr>;
-  // categories: Category[];
 }
 
-export function FilterDialog({ productsQrystr, /* categories */ }: FilterDialogProps) {
+export function FilterDialog({ productsQrystr, }: FilterDialogProps) {
   const columns = useProductsStore(state => state.columns);
   const setShow = useProductsStore(state => state.setShow);
+  const productTypes = useCatalogsStore(state => state.productTypes);
 
   const currentSortField = productsQrystr.data.sortby?.split('-')[0];
   const currentSortOrder = productsQrystr.data.sortby?.split('-')[1] ?? 'asc';
@@ -60,6 +61,7 @@ export function FilterDialog({ productsQrystr, /* categories */ }: FilterDialogP
               <div className="w-full col-span-9">
                 <NativeSelect
                   className='w-full dark:[color-scheme:dark]'
+                  size="sm"
                   value={currentSortField || '_null'}
                   onChange={(e) => changeSortField(e.currentTarget.value)}
                 >
@@ -74,6 +76,7 @@ export function FilterDialog({ productsQrystr, /* categories */ }: FilterDialogP
               <div className="col-span-3">
                 <NativeSelect
                   className='w-full dark:[color-scheme:dark]'
+                  size="sm"
                   value={currentSortOrder}
                   onChange={(e) => changeSortOrder(e.currentTarget.value)}
                 >
@@ -84,21 +87,37 @@ export function FilterDialog({ productsQrystr, /* categories */ }: FilterDialogP
             </div>
           </fieldset>
           <fieldset>
-            <Label >Categoría</Label>
-            {/* <NativeSelect
+            <Label >Tipo</Label>
+            <NativeSelect
               className='w-full dark:[color-scheme:dark]'
-              value={productsQrystr.data.category_id?.toString()}
+              size="sm"
+              value={productsQrystr.data.product_type_id?.toString()}
               onChange={(e) => {
                 const value = e.currentTarget.value;
-                productsQrystr.setData('category_id', value === '' ? null : parseInt(value));
+                productsQrystr.setData('product_type_id', +value);
               }}
             >
               <NativeSelectOption value=''>- Todos -</NativeSelectOption>
-              <NativeSelectOption value='0'>- Sin categoría -</NativeSelectOption>
-              {categories && categories.map(el => (
+              {productTypes && productTypes.map(el => (
                 <NativeSelectOption key={el.id} value={el.id}>{el.name}</NativeSelectOption>
               ))}
-            </NativeSelect> */}
+            </NativeSelect>
+          </fieldset>
+          <fieldset>
+            <Label >Estado</Label>
+            <NativeSelect
+              className='w-full dark:[color-scheme:dark]'
+              size="sm"
+              value={productsQrystr.data.status?.toString()}
+              onChange={(e) => {
+                const value = e.currentTarget.value;
+                productsQrystr.setData('status', value == '_null' ? null : value);
+              }}
+            >
+              <NativeSelectOption value='_null'>- Todos -</NativeSelectOption>
+              <NativeSelectOption value='1'>Activo</NativeSelectOption>
+              <NativeSelectOption value='0'>Inactivo</NativeSelectOption>
+            </NativeSelect>
           </fieldset>
           <FieldSet>
             <FieldLegend variant="label" className="mb-1">

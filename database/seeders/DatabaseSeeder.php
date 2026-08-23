@@ -16,10 +16,9 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             UserSeeder::class,
             UnitSeeder::class,
+            AffectationTypeSeeder::class,
             CompanySettingSeeder::class,
             ProductTypeSeeder::class,
-            LabtestSeeder::class,
-            LabprofileSeeder::class,
             ProductSeeder::class,
         ]);
 

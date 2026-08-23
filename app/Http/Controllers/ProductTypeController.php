@@ -125,4 +125,9 @@ class ProductTypeController extends Controller
     {
         //
     }
+
+    public function getAll(){
+        $productsTypes = ProductType::select(['id','code','name'])->get();
+        return response()->json($productsTypes);
+    }
 }

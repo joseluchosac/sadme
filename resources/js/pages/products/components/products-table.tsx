@@ -57,7 +57,7 @@ export default function ProductsTable({ products, productsQrystr, handlePaginate
       <Pagination
         paginationData={products}
         handlePaginate={handlePaginate}
-        per_page={productsQrystr.data.per_page || '50'}
+        per_page={productsQrystr.data.per_page || '250'}
       />
     </>
   )

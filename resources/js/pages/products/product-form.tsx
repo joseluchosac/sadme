@@ -5,10 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { productFormSchema, ProductFormT } from '@/schemas/product-schema';
-import { Flash, ProductData, ProductType, Unit, } from '@/types';
+import { Flash, ProductData, } from '@/types';
 import { router, useForm } from '@inertiajs/react';
 import { Edit, Trash, X } from 'lucide-react';
-import { FormEvent, useEffect,} from 'react';
+import { FormEvent, useEffect, } from 'react';
 import { Spinner } from '@/components/ui/spinner';
 import { useProductsStore } from '@/store/products-store';
 import { CustomTextarea } from '@/components/ui/custom/custom-textarea';
@@ -17,12 +17,8 @@ import { toast } from 'sonner';
 import { TableBody, TableCell, TableNowrap, TableRow } from '@/components/ui/custom/table-nowrap';
 import { Checkbox } from '@/components/ui/checkbox';
 import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select';
-
-const AFFECTATION_TYPES = [
-  { id: 1, name: 'Gravado' },
-  { id: 2, name: 'Exonerado' },
-  { id: 3, name: 'Inafecto' },
-];
+import { useCatalogsStore } from '@/store/catalogs-store';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const formInit: ProductFormT = {
   id: 0,
@@ -39,15 +35,11 @@ const formInit: ProductFormT = {
   status: 1,
 };
 
-interface ProductFormProps {
-  productTypes: ProductType[]
-  units: Unit[]
-}
-
-export default function ProductForm({productTypes, units} : ProductFormProps) {
+export default function ProductForm() {
   const productId = useProductsStore(state => state.productId)
   const setView = useProductsStore(state => state.setView)
   const setProductId = useProductsStore(state => state.setProductId)
+  const { productTypes, units, affectationTypes } = useCatalogsStore(state => state)
   const form = useForm(formInit);
   const { getProduct, data, isLoading, error } = useService<ProductData>()
   const { confirm } = useAlertDialog()
@@ -140,7 +132,7 @@ export default function ProductForm({productTypes, units} : ProductFormProps) {
       <Card className='lg:mx-auto max-w-2xl overflow-hidden'>
         <CardHeader className='p-4'>
           <CardTitle className='flex justify-between '>
-            <div>{`${productId ? 'Actualizar ' : 'Crear '} exámen`}</div>
+            <div className='text-indigo-500'>{`${productId ? 'Actualizar ' : 'Crear '} producto`}</div>
             <div onClick={handleClose} className='cursor-pointer'><X /></div>
           </CardTitle>
         </CardHeader>
@@ -186,7 +178,7 @@ export default function ProductForm({productTypes, units} : ProductFormProps) {
                   onChange={(e) => form.setData('unit_code', e.target.value)}
                 >
                   <NativeSelectOption value=''>- Seleccione -</NativeSelectOption>
-                  {units.map((unit) => (
+                  {units && units.map((unit) => (
                     <NativeSelectOption key={unit.code} value={unit.code}>
                       {`${unit.code} - ${unit.name}`}
                     </NativeSelectOption>
@@ -205,7 +197,7 @@ export default function ProductForm({productTypes, units} : ProductFormProps) {
                   onChange={(e) => form.setData('product_type_id', Number(e.target.value))}
                 >
                   <NativeSelectOption value='0'>- Seleccione -</NativeSelectOption>
-                  {productTypes.map((productType) => (
+                  {productTypes && productTypes.map((productType) => (
                     <NativeSelectOption key={productType.id} value={productType.id}>
                       {productType.name}
                     </NativeSelectOption>
@@ -227,25 +219,6 @@ export default function ProductForm({productTypes, units} : ProductFormProps) {
                 />
                 <InputError message={form.errors.price} />
               </fieldset>
-              {/* affectation_type_id */}
-              <fieldset className='flex flex-col gap-2 lg:col-span-3'>
-                <Label htmlFor='affectation_type_id'>Afectación</Label>
-                <NativeSelect
-                  className='dark:[color-scheme:dark]'
-                  id='affectation_type_id'
-                  name='affectation_type_id'
-                  value={String(form.data.affectation_type_id)}
-                  onChange={(e) => form.setData('affectation_type_id', Number(e.target.value))}
-                >
-                  <NativeSelectOption value='0'>- Seleccione -</NativeSelectOption>
-                  {AFFECTATION_TYPES.map((affectationType) => (
-                    <NativeSelectOption key={affectationType.id} value={affectationType.id}>
-                      {affectationType.name}
-                    </NativeSelectOption>
-                  ))}
-                </NativeSelect>
-                <InputError message={form.errors.affectation_type_id} />
-              </fieldset>
               {/* description */}
               <fieldset className='flex flex-col gap-2 lg:col-span-12'>
                 <Label htmlFor='description'>Descripción</Label>
@@ -258,6 +231,41 @@ export default function ProductForm({productTypes, units} : ProductFormProps) {
                 />
                 <InputError message={form.errors.description} />
               </fieldset>
+              <div className='flex flex-col gap-2 lg:col-span-12'>
+                <Tabs className='col-span-12' defaultValue="inventory">
+                  <TabsList>
+                    <TabsTrigger value="details">Detalles</TabsTrigger>
+                    <TabsTrigger value="contable" className={(form.errors.price) && 'text-red-500'}>Contable</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="details">
+                    <div className="rounded-md border px-4 py-2 text-sm grid lg:grid-cols-12 gap-3 pt-4">
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="contable">
+                    <div className="rounded-md border px-4 py-2 text-sm grid lg:grid-cols-12 gap-3 pt-4">
+                      {/* affectation_type_id */}
+                      <fieldset className='flex flex-col gap-2 lg:col-span-4'>
+                        <Label htmlFor='affectation_type_id'>Afectación IGV</Label>
+                        <NativeSelect
+                          className='dark:[color-scheme:dark]'
+                          id='affectation_type_id'
+                          name='affectation_type_id'
+                          value={String(form.data.affectation_type_id)}
+                          onChange={(e) => form.setData('affectation_type_id', Number(e.target.value))}
+                        >
+                          <NativeSelectOption value='0'>- Seleccione -</NativeSelectOption>
+                          {affectationTypes && affectationTypes.map((affectationType) => (
+                            <NativeSelectOption key={affectationType.id} value={affectationType.id}>
+                              {affectationType.name} ({+affectationType.tax_percentage}%)
+                            </NativeSelectOption>
+                          ))}
+                        </NativeSelect>
+                        <InputError message={form.errors.affectation_type_id} />
+                      </fieldset>
+                    </div>
+                  </TabsContent>
+                </Tabs>
+              </div>
               {/* status */}
               <fieldset className='flex items-center gap-2 lg:col-span-12'>
                 <Checkbox
@@ -288,7 +296,7 @@ export default function ProductForm({productTypes, units} : ProductFormProps) {
                           />
                           <Trash
                             className='cursor-pointer text-red-500'
-                            size={20} 
+                            size={20}
                           />
                         </div>
                       </TableCell>
@@ -308,7 +316,7 @@ export default function ProductForm({productTypes, units} : ProductFormProps) {
                           />
                           <Trash
                             className='cursor-pointer text-red-500'
-                            size={20} 
+                            size={20}
                           />
                         </div>
                       </TableCell>

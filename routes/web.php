@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LabtestController;
 use App\Http\Controllers\ProductController;
@@ -32,11 +33,11 @@ Route::middleware(['auth'])->group(function () {
 
     // product_types
     Route::resource('product-types', ProductTypeController::class)->except(['create', 'show', 'edit']);
+    Route::get('product-types/get-all', [ProductTypeController::class, 'getAll'])->name('product-types.get-all');
 
-    // lab tests
-    Route::resource('labtests', LabtestController::class)->except(['create', 'show', 'edit']);
-    Route::get('labtests/{labtest}', [LabtestController::class, 'getLabtest'])->name('labtests.get');
-    Route::patch('labtests/set-status/{labtest}', [LabtestController::class, 'setStatus'])->name('labtests.set-status');
+    // catalogs
+    Route::get('catalogs/get-units', [CatalogController::class, 'getUnits'])->name('catalogs.get-units');
+    Route::get('catalogs/get-affectation-types', [CatalogController::class, 'getAffectationTypes'])->name('catalogs.get-affectation-types');
 });
 
 require __DIR__.'/settings.php';

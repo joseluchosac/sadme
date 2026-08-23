@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { usePermissionsTableConfigStore } from "@/store/permissions-table-config-store";
+import { usePermissionsStore } from "@/store/permissions-store";
 import { Qrystr } from "@/types";
 import { InertiaFormProps} from "@inertiajs/react";
 import { CircleX } from "lucide-react";
@@ -10,7 +10,7 @@ interface FilterBadgesProps {
 
 
 export default function FilterBadges({ permissionsQrystr }: FilterBadgesProps) {
-  const columns = usePermissionsTableConfigStore(state => state.columns);
+  const columns = usePermissionsStore(state => state.columns);
 
   const currentSortField = permissionsQrystr.data.sortby?.split('-')[0];
   const currentSortOrder = permissionsQrystr.data.sortby?.split('-')[1] ?? 'asc';

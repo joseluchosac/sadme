@@ -6,7 +6,7 @@ import { Pencil, Trash } from "lucide-react";
 import { Dispatch, SetStateAction, useState } from "react";
 import { useAlertDialog } from "@/components/alert_dialog/use-alert-dialog";
 import { Spinner } from "@/components/ui/spinner";
-import { useRolesTableConfigStore } from "@/store/roles-table-config-store";
+import { useRolesStore } from "@/store/roles-store";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 
@@ -17,9 +17,9 @@ interface RolesTableRowProps {
 }
 
 export default function RolesTableRow({ role, setRoleId, setView }: RolesTableRowProps) {
-  const columns = useRolesTableConfigStore(state => state.columns);
-  const selectedRowId = useRolesTableConfigStore(state => state.selectedRowId);
-  const setSelectedRowId = useRolesTableConfigStore(state => state.setSelectedRowId);
+  const columns = useRolesStore(state => state.columns);
+  const selectedRowId = useRolesStore(state => state.selectedRowId);
+  const setSelectedRowId = useRolesStore(state => state.setSelectedRowId);
 
   return (
     <TableRow

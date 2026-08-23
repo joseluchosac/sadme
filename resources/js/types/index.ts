@@ -176,33 +176,6 @@ export type CompanySetting = {
   updated_at: string;
 }
 
-// LAB TESTS
-export interface Labtest {
-  id: number;
-  code: string;
-  name: string;
-  area: string;
-  sample: string;
-  status: number;
-  description?: string;
-  created_at?: string;
-  updated_at?: string;
-}
-
-export interface LabtestItem extends Labtest {
-}
-
-export interface LabtestsPaginated extends Paginated {
-  data: LabtestItem[];
-}
-
-export type LabtestsQrystr = Qrystr & {
-}
-
-export interface LabtestData extends Labtest {
-
-}
-
 // units
 export interface Unit {
   id: number,
@@ -224,13 +197,29 @@ export interface ProductType {
   updated_at?: string;
 }
 
+// affectation_types
+export interface AffectationType {
+  id: number,
+  code: string;
+  name: string;
+  tax_letter: string;
+  tax_code: string;
+  tax_name: string;
+  tax_type: string;
+  tax_percentage: number;
+  importe_icbper: number;
+  status: boolean;
+  created_at?: string;
+  updated_at?: string;
+}
+
 // products
 export interface Product {
   id: number;
   code: string;
   name: string;
   unit_code: string;
-  price: string;
+  price: number;
   min_stock: number;
   brand: string;
   barcode: string;
@@ -252,4 +241,6 @@ export interface ProductsPaginated extends Paginated {
   data: ProductItem[];
 }
 export type ProductsQrystr = Qrystr & {
+  product_type_id: number | null;
+  status: string | null;
 }

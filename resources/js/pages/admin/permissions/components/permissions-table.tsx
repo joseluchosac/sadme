@@ -4,7 +4,7 @@ import { Dispatch, SetStateAction } from "react";
 import PermissionsColumnSort from "./permissions-column-sort";
 import { PermissionsPaginated, Qrystr } from "@/types";
 import PermissionsTableRow from "./permissions-table-row";
-import { usePermissionsTableConfigStore } from "@/store/permissions-table-config-store";
+import { usePermissionsStore } from "@/store/permissions-store";
 import { cn } from "@/lib/utils";
 
 interface PermissionsTableProps {
@@ -15,7 +15,7 @@ interface PermissionsTableProps {
 }
 
 export default function PermissionsTable({ permissions, permissionsQrystr, setPermissionId, setView }: PermissionsTableProps) {
-  const columns = usePermissionsTableConfigStore(state => state.columns);
+  const columns = usePermissionsStore(state => state.columns);
   return (
     <TableNowrap noWrapper>
       <TableHeader className="bg-fondo01 sticky top-0 z-10">

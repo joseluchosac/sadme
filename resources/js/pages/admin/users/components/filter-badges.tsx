@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { useUsersTableConfigStore } from "@/store/users-table-config-store";
+import { useUsersStore } from "@/store/users-store";
 import { Qrystr } from "@/types";
 import { InertiaFormProps} from "@inertiajs/react";
 import { CircleX } from "lucide-react";
@@ -10,7 +10,7 @@ interface FilterBadgesProps {
 
 
 export default function FilterBadges({ usersQrystr }: FilterBadgesProps) {
-  const columns = useUsersTableConfigStore(state => state.columns);
+  const columns = useUsersStore(state => state.columns);
 
   const currentSortField = usersQrystr.data.sortby?.split('-')[0];
   const currentSortOrder = usersQrystr.data.sortby?.split('-')[1] ?? 'asc';

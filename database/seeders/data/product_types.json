@@ -1,10 +1,5 @@
 [
-  { "code": "1", "name": "Bienes"},
-  { "code": "2", "name": "Consultas"},
-  { "code": "3", "name": "Terapia"},
-  { "code": "4", "name": "Analisis"},
-  { "code": "5", "name": "Perfiles"},
-  { "code": "6", "name": "Ecografía"},
-  { "code": "7", "name": "Densitometría"},
-  { "code": "8", "name": "Rayos X"}
+  { "code": "001", "name": "Bienes"},
+  { "code": "002", "name": "Consultas"},
+  { "code": "003", "name": "Analisis"}
 ]

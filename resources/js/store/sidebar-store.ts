@@ -19,23 +19,6 @@ const mainNavItemsInit: MainNavItem[] = [
     can: null,
     subItems: null,
   },
-  // LABORATORIO
-  {
-    title: 'Laboratorio',
-    url: '/',
-    rootUrl: '/',
-    icon: ShieldX,
-    isActive: false,
-    isOpen: false,
-    can: null,
-    subItems: [
-      {
-        title: 'Exámenes de laboratorio',
-        url: '/labtests',
-        can: null,
-      },
-    ]
-  },
   // PRODUCTS
   {
     title: 'Productos',

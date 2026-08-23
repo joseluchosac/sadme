@@ -4,7 +4,7 @@ import { Dispatch, SetStateAction } from "react";
 import RolesColumnSort from "./roles-column-sort";
 import { RolesPaginated, Qrystr } from "@/types";
 import RolesTableRow from "./roles-table-row";
-import { useRolesTableConfigStore } from "@/store/roles-table-config-store";
+import { useRolesStore } from "@/store/roles-store";
 import { cn } from "@/lib/utils";
 
 interface RolesTableProps {
@@ -15,7 +15,7 @@ interface RolesTableProps {
 }
 
 export default function RolesTable({ roles, rolesQrystr, setRoleId, setView }: RolesTableProps) {
-  const columns = useRolesTableConfigStore(state => state.columns);
+  const columns = useRolesStore(state => state.columns);
   return (
     <TableNowrap noWrapper>
       <TableHeader className="bg-fondo01 sticky top-0 z-10">

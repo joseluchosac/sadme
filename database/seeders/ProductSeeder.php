@@ -9,11 +9,13 @@ class ProductSeeder extends Seeder
 {
     public function run(): void
     {
-        $jsonPath = database_path('seeders/data/products.json');
-        $json = file_get_contents($jsonPath);
-        $data = json_decode($json, true);
+        $products_labPath = database_path('seeders/data/products_lab.json');
+        $jsonLab = file_get_contents($products_labPath);
+        $dataLab = json_decode($jsonLab, true);
 
-        foreach ($data as $item) {
+        foreach ($dataLab as $item) {
+            $item['unit_code'] = 'ZZ';
+            $item['affectation_type_id'] = 2;
             Product::create($item);
         }
     }

@@ -1,7 +1,7 @@
 import { TableColumn } from '@/types';
 import { create } from 'zustand';
 
-type PermissionsTableState = {
+type PermissionsState = {
   columns: TableColumn[];
   selectedRowId: number;
   setSelectedRowId: (value: number) => void;
@@ -20,7 +20,7 @@ const initialState = {
   selectedRowId: 0,
 };
 
-export const usePermissionsTableConfigStore = create<PermissionsTableState>((set) => ({
+export const usePermissionsStore = create<PermissionsState>((set) => ({
   ...initialState,
   setSelectedRowId: (value: number) => set({ selectedRowId: value }),
 }));

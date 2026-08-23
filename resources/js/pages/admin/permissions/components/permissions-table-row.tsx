@@ -6,7 +6,7 @@ import { Pencil, Trash } from "lucide-react";
 import { Dispatch, SetStateAction, useState } from "react";
 import { useAlertDialog } from "@/components/alert_dialog/use-alert-dialog";
 import { Spinner } from "@/components/ui/spinner";
-import { usePermissionsTableConfigStore } from "@/store/permissions-table-config-store";
+import { usePermissionsStore} from "@/store/permissions-store";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 
@@ -17,9 +17,9 @@ interface PermissionsTableRowProps {
 }
 
 export default function PermissionsTableRow({ permission, setPermissionId, setView }: PermissionsTableRowProps) {
-  const columns = usePermissionsTableConfigStore(state => state.columns);
-  const selectedRowId = usePermissionsTableConfigStore(state => state.selectedRowId);
-  const setSelectedRowId = usePermissionsTableConfigStore(state => state.setSelectedRowId);
+  const columns = usePermissionsStore(state => state.columns);
+  const selectedRowId = usePermissionsStore(state => state.selectedRowId);
+  const setSelectedRowId = usePermissionsStore(state => state.setSelectedRowId);
 
   return (
     <TableRow

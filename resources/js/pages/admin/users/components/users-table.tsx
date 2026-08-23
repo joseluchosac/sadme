@@ -4,7 +4,7 @@ import { Dispatch, SetStateAction } from "react";
 import UsersColumnSort from "./users-column-sort";
 import { UsersPaginated, Qrystr } from "@/types";
 import UsersTableRow from "./users-table-row";
-import { useUsersTableConfigStore } from "@/store/users-table-config-store";
+import { useUsersStore, } from "@/store/users-store";
 import { cn } from "@/lib/utils";
 
 interface UsersTableProps {
@@ -15,7 +15,7 @@ interface UsersTableProps {
 }
 
 export default function UsersTable({ users, usersQrystr, setUserId, setView }: UsersTableProps) {
-  const columns = useUsersTableConfigStore(state => state.columns);
+  const columns = useUsersStore(state => state.columns);
   return (
     <TableNowrap noWrapper>
       <TableHeader className="bg-fondo01 sticky top-0 z-10">

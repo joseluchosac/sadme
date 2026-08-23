@@ -1,7 +1,7 @@
 import { TableColumn } from '@/types';
 import { create } from 'zustand';
 
-type RolesTableState = {
+type RolesState = {
   columns: TableColumn[];
   selectedRowId: number;
   setSelectedRowId: (value: number) => void;
@@ -20,7 +20,7 @@ const initialState = {
   selectedRowId: 0,
 };
 
-export const useRolesTableConfigStore = create<RolesTableState>((set) => ({
+export const useRolesStore = create<RolesState>((set) => ({
   ...initialState,
   setSelectedRowId: (value: number) => set({ selectedRowId: value }),
 }));

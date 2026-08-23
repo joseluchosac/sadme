@@ -6,9 +6,9 @@ import { Pencil, Trash } from "lucide-react";
 import { Dispatch, SetStateAction, useState } from "react";
 import { useAlertDialog } from "@/components/alert_dialog/use-alert-dialog";
 import { Spinner } from "@/components/ui/spinner";
-import { useUsersTableConfigStore } from "@/store/users-table-config-store";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import { useUsersStore } from "@/store/users-store";
 
 interface UsersTableRowProps {
   user: UserItem;
@@ -17,9 +17,9 @@ interface UsersTableRowProps {
 }
 
 export default function UsersTableRow({ user, setUserId, setView }: UsersTableRowProps) {
-  const columns = useUsersTableConfigStore(state => state.columns);
-  const selectedRowId = useUsersTableConfigStore(state => state.selectedRowId);
-  const setSelectedRowId = useUsersTableConfigStore(state => state.setSelectedRowId);
+  const columns = useUsersStore(state => state.columns);
+  const selectedRowId = useUsersStore(state => state.selectedRowId);
+  const setSelectedRowId = useUsersStore(state => state.setSelectedRowId);
 
   return (
     <TableRow
