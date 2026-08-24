@@ -32,6 +32,7 @@ const formInit: ProductFormT = {
   product_type_id: 0,
   affectation_type_id: 0,
   description: '',
+  details: '',
   status: 1,
 };
 
@@ -114,6 +115,7 @@ export default function ProductForm() {
       product_type_id: data.product_type_id,
       affectation_type_id: data.affectation_type_id,
       description: data.description || '',
+      details: data.details || '',
       status: data.status,
     }
     // setPreview(data.image_url || null)
@@ -168,7 +170,7 @@ export default function ProductForm() {
                 <InputError message={form.errors.name} className='-mt-1' />
               </fieldset>
               {/* unit_code */}
-              <fieldset className='flex flex-col gap-2 lg:col-span-3'>
+              <fieldset className='flex flex-col gap-2 lg:col-span-4'>
                 <Label htmlFor='unit_code'>Unidad</Label>
                 <NativeSelect
                   className='dark:[color-scheme:dark]'
@@ -187,10 +189,10 @@ export default function ProductForm() {
                 <InputError message={form.errors.unit_code} />
               </fieldset>
               {/* product_type_id */}
-              <fieldset className='flex flex-col gap-2 lg:col-span-3'>
+              <fieldset className='flex flex-col gap-2 lg:col-span-5'>
                 <Label htmlFor='product_type_id'>Tipo</Label>
                 <NativeSelect
-                  className='dark:[color-scheme:dark]'
+                  className='dark:[color-scheme:dark] w-full'
                   id='product_type_id'
                   name='product_type_id'
                   value={String(form.data.product_type_id)}
@@ -230,6 +232,18 @@ export default function ProductForm() {
                   onChange={(e) => form.setData('description', e.target.value)}
                 />
                 <InputError message={form.errors.description} />
+              </fieldset>
+              {/* details */}
+              <fieldset className='flex flex-col gap-2 lg:col-span-12'>
+                <Label htmlFor='details'>Detalles</Label>
+                <CustomTextarea
+                  id='details'
+                  name='details'
+                  rows={4}
+                  value={form.data.details ?? ''}
+                  onChange={(e) => form.setData('details', e.target.value)}
+                />
+                <InputError message={form.errors.details} />
               </fieldset>
               <div className='flex flex-col gap-2 lg:col-span-12'>
                 <Tabs className='col-span-12' defaultValue="inventory">
@@ -276,7 +290,7 @@ export default function ProductForm() {
                 <Label htmlFor='status'>Activo</Label>
               </fieldset>
             </div>
-            <div className='flex flex-col gap-2 mt-4'>
+            {/* <div className='flex flex-col gap-2 mt-4'>
               <Label htmlFor='description'>Precios</Label>
               <div className='border rounded-md overflow-hidden'>
                 <TableNowrap>
@@ -324,7 +338,7 @@ export default function ProductForm() {
                   </TableBody>
                 </TableNowrap>
               </div>
-            </div>
+            </div> */}
             <div className='flex justify-end'>
               <Button type='submit' className='mt-4 w-fit cursor-pointer' disabled={!form.isDirty || form.processing}>
                 <Spinner className={`${!form.processing && 'hidden'}`} data-icon="inline-start" />
@@ -338,6 +352,14 @@ export default function ProductForm() {
             </div>
           )}
         </CardContent>
+      </Card>
+      <Card className='lg:mx-auto max-w-2xl overflow-hidden w-full'>
+        <CardHeader className='p-4'>
+          <CardTitle className='flex justify-between '>
+            <div className='text-indigo-500'>{`${productId ? 'Actualizar ' : 'Crear '} producto`}</div>
+            {/* <div onClick={handleClose} className='cursor-pointer'><X /></div> */}
+          </CardTitle>
+        </CardHeader>
       </Card>
     </div>
   );

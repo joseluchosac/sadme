@@ -12,6 +12,7 @@ export const productFormSchema = z.object({
   product_type_id: z.number().min(1,'Elija el tipo'),
   affectation_type_id: z.number().min(1,'Elija la afectación'),
   description: z.string().max(200,{error:'Máximo 200 caracteres'}),
+  details: z.string(),
   status: z.number().int().min(0).max(1),
 });
 

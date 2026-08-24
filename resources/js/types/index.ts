@@ -226,6 +226,7 @@ export interface Product {
   product_type_id: number;
   affectation_type_id: number;
   description: string;
+  details?: string;
   status: number;
   created_at?: string;
   updated_at?: string;

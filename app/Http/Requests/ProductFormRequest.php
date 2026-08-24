@@ -34,6 +34,13 @@ class ProductFormRequest extends FormRequest
             'affectation_type_id' => 'integer|min:1',
             'description' => 'nullable|max:300',
             'status' => 'nullable|boolean',
+            // 'labtest' => 'nullable|array',
+            // 'labtest.description' => 'nullable|string|max:1000',
+            // 'labtest.sirve' => 'nullable|string',
+            // 'labtest.resultado' => 'required_with:labtest|string|max:255',
+            // 'labtest.muestra' => 'required_with:labtest|string|max:255',
+            // 'labtest.area' => 'required_with:labtest|string|max:255',
+            // 'labtest.exams' => 'nullable|string',
         ];
 
         if ($this->isMethod('post')) {
@@ -68,13 +75,17 @@ class ProductFormRequest extends FormRequest
 
             'product_type_id.min' => 'Elija el tipo.',
             'affectation_type_id.min' => 'Elija la afectación.',
-            
+
             'description.max' => 'La descripción no debe exceder los 300 caracteres.',
 
             'price.numeric' => 'El precio debe ser un número.',
             'price.min' => 'El precio no puede ser negativo.',
 
             'status.boolean' => 'El estado debe ser verdadero o falso.',
+
+            // 'labtest.resultado.required_with' => 'Ingrese el resultado.',
+            // 'labtest.muestra.required_with' => 'Ingrese la muestra.',
+            // 'labtest.area.required_with' => 'Ingrese el área.',
         ];
 
         return $messages;

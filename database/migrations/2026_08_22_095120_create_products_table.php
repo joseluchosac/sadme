@@ -24,6 +24,7 @@ return new class extends Migration
                 ->constrained('product_types')->onDelete('restrict');
             $table->integer('affectation_type_id')->default(1);
             $table->text('description')->nullable();
+            $table->mediumText('details')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

@@ -17,16 +17,25 @@ class Product extends Model
         'barcode',
         'affectation_type_id',
         'description',
+        'details',
         'status',
     ];
 
     // Relación uno a uno inversa
-    public function productType(){
+    public function productType()
+    {
         return $this->belongsTo(ProductType::class);
     }
 
     // Relación uno a uno inversa
-    public function unit(){
-        return $this->belongsTo(Unit::class,'unit_code','code');
+    public function unit()
+    {
+        return $this->belongsTo(Unit::class, 'unit_code', 'code');
+    }
+
+    // Relación uno a uno
+    public function pLabtest()
+    {
+        return $this->hasOne(PLabtest::class);
     }
 }

@@ -65,6 +65,7 @@ class ProductController extends Controller
                 'updated_at' => $product->updated_at,
             ];
         });
+
         return Inertia::render('products/index', [
             'products' => $products,
             'qrystr' => $request->only(['search', 'product_type_id', 'status', 'sortby', 'page', 'per_page']),
@@ -87,9 +88,22 @@ class ProductController extends Controller
                 'product_type_id' => $request->input('product_type_id'),
                 'affectation_type_id' => $request->input('affectation_type_id'),
                 'description' => $request->input('description'),
+                'details' => $request->input('details'),
             ]);
 
             if ($product) {
+                // Datos complementarios de la relación uno a uno con p_labtests
+                // if ($request->filled('labtest')) {
+                //     $product->pLabtest()->create([
+                //         'description' => $request->input('labtest.description'),
+                //         'sirve' => $request->input('labtest.sirve'),
+                //         'resultado' => $request->input('labtest.resultado'),
+                //         'muestra' => $request->input('labtest.muestra'),
+                //         'area' => $request->input('labtest.area'),
+                //         'exams' => $request->input('labtest.exams'),
+                //     ]);
+                // }
+
                 $this->flash['msg'] = 'El producto fue creado satisfactoriamente';
                 $this->flash['type'] = 'success';
                 $this->flash['data'] = $product;
@@ -121,7 +135,21 @@ class ProductController extends Controller
                 'product_type_id' => $request->input('product_type_id'),
                 'affectation_type_id' => $request->input('affectation_type_id'),
                 'description' => $request->input('description'),
+                'details' => $request->input('details'),
             ]);
+
+            // Datos complementarios de la relación uno a uno con p_labtests
+            // (actualiza si existe o crea si aún no tiene registro)
+            // if ($request->filled('labtest')) {
+            //     $product->pLabtest()->updateOrCreate([], [
+            //         'description' => $request->input('labtest.description'),
+            //         'sirve' => $request->input('labtest.sirve'),
+            //         'resultado' => $request->input('labtest.resultado'),
+            //         'muestra' => $request->input('labtest.muestra'),
+            //         'area' => $request->input('labtest.area'),
+            //         'exams' => $request->input('labtest.exams'),
+            //     ]);
+            // }
 
             if ($product) {
                 $this->flash['msg'] = 'El producto fue actualizado satisfactoriamente';
