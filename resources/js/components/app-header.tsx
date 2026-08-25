@@ -17,28 +17,23 @@ import AppLogoIcon from './app-logo-icon';
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Dashboard',
-        url: '/dashboard',
-        icon: LayoutGrid,
-    },
-    {
-        title: 'Productos',
-        url: '/products',
+        title: 'Laboratorio',
+        url: '/lab',
         icon: LayoutGrid,
     },
 ];
 
 const rightNavItems: NavItem[] = [
-    {
-        title: 'Repository',
-        url: 'https://github.com/laravel/react-starter-kit',
-        icon: Folder,
-    },
-    {
-        title: 'Documentation',
-        url: 'https://laravel.com/docs/starter-kits',
-        icon: BookOpen,
-    },
+    // {
+    //     title: 'Repository',
+    //     url: 'https://github.com/laravel/react-starter-kit',
+    //     icon: Folder,
+    // },
+    // {
+    //     title: 'Documentation',
+    //     url: 'https://laravel.com/docs/starter-kits',
+    //     icon: BookOpen,
+    // },
 ];
 
 const activeItemStyles = 'text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100';
@@ -129,7 +124,7 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
                         </NavigationMenu>
                     </div>
 
-                    <div className="ml-auto flex items-center space-x-2">
+                    {/* <div className="ml-auto flex items-center space-x-2">
                         <div className="relative flex items-center space-x-1">
                             <Button variant="ghost" size="icon" className="group h-9 w-9 cursor-pointer">
                                 <Search className="!size-5 opacity-80 group-hover:opacity-100" />
@@ -172,7 +167,7 @@ export function AppHeader({ breadcrumbs = [] }: AppHeaderProps) {
                                 <UserMenuContent user={auth.user} />
                             </DropdownMenuContent>
                         </DropdownMenu>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             {breadcrumbs.length > 1 && (

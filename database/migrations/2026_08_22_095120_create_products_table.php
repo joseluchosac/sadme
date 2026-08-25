@@ -20,11 +20,11 @@ return new class extends Migration
             $table->integer('min_stock')->default(0);
             $table->string('brand', 20)->nullable();
             $table->string('barcode', 20)->unique()->nullable();
-            $table->foreignId('product_type_id')->default(1)
-                ->constrained('product_types')->onDelete('restrict');
             $table->integer('affectation_type_id')->default(1);
+            $table->integer('category_id')->nullable();
             $table->text('description')->nullable();
             $table->mediumText('details')->nullable();
+            $table->json('features')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

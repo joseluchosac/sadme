@@ -187,16 +187,6 @@ export interface Unit {
   updated_at?: string;
 }
 
-// product_types
-export interface ProductType {
-  id: number,
-  code: string;
-  name: string;
-  status: boolean;
-  created_at?: string;
-  updated_at?: string;
-}
-
 // affectation_types
 export interface AffectationType {
   id: number,
@@ -223,10 +213,11 @@ export interface Product {
   min_stock: number;
   brand: string;
   barcode: string;
-  product_type_id: number;
+  category_id: number;
   affectation_type_id: number;
   description: string;
-  details?: string;
+  details: string;
+  features: string;
   status: number;
   created_at?: string;
   updated_at?: string;
@@ -235,13 +226,22 @@ export interface ProductData extends Product {
 
 }
 export interface ProductItem extends Product {
-  product_type_name: string;
+  category_name: string;
   affectation_type_name: string;
 }
 export interface ProductsPaginated extends Paginated {
   data: ProductItem[];
 }
 export type ProductsQrystr = Qrystr & {
-  product_type_id: number | null;
+  category_id: number | null;
   status: string | null;
 }
+
+export interface Category {
+  id: number;
+  name: string;
+  created_at?: string;
+  updated_at?: string;
+}
+
+export type Feature = [string, string]

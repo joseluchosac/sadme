@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { productFormSchema, ProductFormT } from '@/schemas/product-schema';
-import { Flash, ProductData, } from '@/types';
+import { Feature, Flash, ProductData, } from '@/types';
 import { router, useForm } from '@inertiajs/react';
 import { Edit, Trash, X } from 'lucide-react';
 import { FormEvent, useEffect, } from 'react';
@@ -19,6 +19,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select';
 import { useCatalogsStore } from '@/store/catalogs-store';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import MiQuillEditor from '@/components/custom/mi-quill-editor';
 
 const formInit: ProductFormT = {
   id: 0,
@@ -29,10 +30,11 @@ const formInit: ProductFormT = {
   min_stock: 0,
   brand: null,
   barcode: null,
-  product_type_id: 0,
+  category_id: 0,
   affectation_type_id: 0,
   description: '',
   details: '',
+  features: null,
   status: 1,
 };
 
@@ -40,7 +42,7 @@ export default function ProductForm() {
   const productId = useProductsStore(state => state.productId)
   const setView = useProductsStore(state => state.setView)
   const setProductId = useProductsStore(state => state.setProductId)
-  const { productTypes, units, affectationTypes } = useCatalogsStore(state => state)
+  const { categories, units, affectationTypes } = useCatalogsStore(state => state)
   const form = useForm(formInit);
   const { getProduct, data, isLoading, error } = useService<ProductData>()
   const { confirm } = useAlertDialog()
@@ -93,6 +95,10 @@ export default function ProductForm() {
 
   };
 
+  const handlePdf = () => {
+    console.log('generar pdf');
+    window.open(route('products.product-pdf',{product: form.data.id}), '_blank');
+  }
   // Efecto solicitar el producto
   useEffect(() => {
     if (productId) {
@@ -103,6 +109,8 @@ export default function ProductForm() {
   // efecto para actualizar el formulario con el producto solicitado
   useEffect(() => {
     if (!data) return;
+    // const features: Feature[] = [['nombre','jose'],['edad','45'],['alguien','nadie']]
+    const features: Feature[] = data.features ? JSON.parse(data.features) : null
     const product: ProductFormT = {
       id: data.id,
       code: data.code,
@@ -112,10 +120,11 @@ export default function ProductForm() {
       min_stock: data.min_stock,
       brand: data.brand || null,
       barcode: data.barcode || null,
-      product_type_id: data.product_type_id,
+      category_id: data.category_id,
       affectation_type_id: data.affectation_type_id,
       description: data.description || '',
       details: data.details || '',
+      features: features,
       status: data.status,
     }
     // setPreview(data.image_url || null)
@@ -188,24 +197,24 @@ export default function ProductForm() {
                 </NativeSelect>
                 <InputError message={form.errors.unit_code} />
               </fieldset>
-              {/* product_type_id */}
+              {/* category_id */}
               <fieldset className='flex flex-col gap-2 lg:col-span-5'>
-                <Label htmlFor='product_type_id'>Tipo</Label>
+                <Label htmlFor='category_id'>Categoría</Label>
                 <NativeSelect
                   className='dark:[color-scheme:dark] w-full'
-                  id='product_type_id'
-                  name='product_type_id'
-                  value={String(form.data.product_type_id)}
-                  onChange={(e) => form.setData('product_type_id', Number(e.target.value))}
+                  id='category_id'
+                  name='category_id'
+                  value={String(form.data.category_id)}
+                  onChange={(e) => form.setData('category_id', Number(e.target.value))}
                 >
                   <NativeSelectOption value='0'>- Seleccione -</NativeSelectOption>
-                  {productTypes && productTypes.map((productType) => (
-                    <NativeSelectOption key={productType.id} value={productType.id}>
-                      {productType.name}
+                  {categories && categories.map((category) => (
+                    <NativeSelectOption key={category.id} value={category.id}>
+                      {category.name}
                     </NativeSelectOption>
                   ))}
                 </NativeSelect>
-                <InputError message={form.errors.product_type_id} />
+                <InputError message={form.errors.category_id} />
               </fieldset>
               {/* price */}
               <fieldset className='flex flex-col gap-2 lg:col-span-3'>
@@ -236,6 +245,21 @@ export default function ProductForm() {
               {/* details */}
               <fieldset className='flex flex-col gap-2 lg:col-span-12'>
                 <Label htmlFor='details'>Detalles</Label>
+                <MiQuillEditor
+                    value={form.data.details}
+                    onChange={(html) => form.setData('details', html)}
+                    error={form.errors.details}
+                />
+                <InputError message={form.errors.details} />
+              </fieldset>
+              {/* details */}
+              <div
+                id='preview-quill'
+                className='lg:col-span-12'
+                dangerouslySetInnerHTML={{ __html: form.data.details }}
+              ></div>
+              <fieldset className='flex flex-col gap-2 lg:col-span-12'>
+                <Label htmlFor='details'>Detalles</Label>
                 <CustomTextarea
                   id='details'
                   name='details'
@@ -246,13 +270,18 @@ export default function ProductForm() {
                 <InputError message={form.errors.details} />
               </fieldset>
               <div className='flex flex-col gap-2 lg:col-span-12'>
-                <Tabs className='col-span-12' defaultValue="inventory">
+                <Tabs className='col-span-12' defaultValue="features">
                   <TabsList>
-                    <TabsTrigger value="details">Detalles</TabsTrigger>
+                    <TabsTrigger value="features">Características</TabsTrigger>
                     <TabsTrigger value="contable" className={(form.errors.price) && 'text-red-500'}>Contable</TabsTrigger>
                   </TabsList>
-                  <TabsContent value="details">
+                  <TabsContent value="features">
                     <div className="rounded-md border px-4 py-2 text-sm grid lg:grid-cols-12 gap-3 pt-4">
+                      <div className='flex flex-col gap-2 lg:col-span-6'>
+                        {form.data.features && form.data.features.map((el, idx)=>(
+                          <div key={idx}>{el[0]}: {el[1]}</div>
+                        ))}
+                      </div>
                     </div>
                   </TabsContent>
                   <TabsContent value="contable">
@@ -340,6 +369,15 @@ export default function ProductForm() {
               </div>
             </div> */}
             <div className='flex justify-end'>
+              <Button
+                variant={'outline'} 
+                type='button' 
+                className='mt-4 w-fit cursor-pointer'
+                onClick={handlePdf}
+              >
+                <Spinner className={`${!form.processing && 'hidden'}`} data-icon="inline-start" />
+                  Pdf
+                </Button>
               <Button type='submit' className='mt-4 w-fit cursor-pointer' disabled={!form.isDirty || form.processing}>
                 <Spinner className={`${!form.processing && 'hidden'}`} data-icon="inline-start" />
                 Guardar
@@ -352,14 +390,6 @@ export default function ProductForm() {
             </div>
           )}
         </CardContent>
-      </Card>
-      <Card className='lg:mx-auto max-w-2xl overflow-hidden w-full'>
-        <CardHeader className='p-4'>
-          <CardTitle className='flex justify-between '>
-            <div className='text-indigo-500'>{`${productId ? 'Actualizar ' : 'Crear '} producto`}</div>
-            {/* <div onClick={handleClose} className='cursor-pointer'><X /></div> */}
-          </CardTitle>
-        </CardHeader>
       </Card>
     </div>
   );

@@ -1,5 +1,5 @@
 import z from "zod";
-
+const feature = z.tuple([z.string(), z.string()]);
 export const productFormSchema = z.object({
   id: z.number().int(),
   code: z.string().min(1,{error: 'Ingrese el código'}).max(6,{error:'Máximo 6 caracteres'}),
@@ -9,10 +9,11 @@ export const productFormSchema = z.object({
   min_stock: z.number().nonnegative("Stock min no válido"),
   brand: z.string().max(20,{error:'Máximo 20 caracteres'}).nullable(),
   barcode: z.string().max(20,{error:'El código de barras máximo 20 dígitos'}).nullable(),
-  product_type_id: z.number().min(1,'Elija el tipo'),
+  category_id: z.number().nullable(),
   affectation_type_id: z.number().min(1,'Elija la afectación'),
   description: z.string().max(200,{error:'Máximo 200 caracteres'}),
   details: z.string(),
+  features: z.array(feature).nullable(),
   status: z.number().int().min(0).max(1),
 });
 

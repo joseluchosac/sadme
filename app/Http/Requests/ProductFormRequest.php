@@ -30,7 +30,7 @@ class ProductFormRequest extends FormRequest
             'min_stock' => 'required|integer|min:0',
             'brand' => 'nullable|string|max:100',
             'barcode' => 'nullable|max:20',
-            'product_type_id' => 'integer|min:1',
+            'category_id' => 'integer|min:1',
             'affectation_type_id' => 'integer|min:1',
             'description' => 'nullable|max:300',
             'status' => 'nullable|boolean',
@@ -73,7 +73,7 @@ class ProductFormRequest extends FormRequest
             'unit_code.required' => 'Elija la unidad.',
             'unit_code.max' => 'La unidad no debe exeder los 3 caracteres.',
 
-            'product_type_id.min' => 'Elija el tipo.',
+            'category_id.min' => 'Elija una categoría.',
             'affectation_type_id.min' => 'Elija la afectación.',
 
             'description.max' => 'La descripción no debe exceder los 300 caracteres.',

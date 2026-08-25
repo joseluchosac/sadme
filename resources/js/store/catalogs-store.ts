@@ -1,13 +1,13 @@
 import { Appearance } from '@/hooks/use-appearance';
-import { AffectationType, ProductType, Unit } from '@/types';
+import { AffectationType, Category, Unit } from '@/types';
 import { create } from 'zustand';
 
 type CatalogsState = {
   isDarkTheme: boolean;
   setIsDarkTheme: (appearance: string) => void
-  // productTypes
-  productTypes: ProductType[] | null;
-  setProductTypes: (productTypes: ProductType[]) => void;
+  // categories
+  categories: Category[] | null;
+  setCategories: (categories: Category[]) => void;
   // units
   units: Unit[] | null;
   setUnits: (units: Unit[]) => void
@@ -22,7 +22,7 @@ const prefersDark = () => window.matchMedia('(prefers-color-scheme: dark)').matc
 
 const initialState = {
   isDarkTheme: savedAppearance === 'dark' || (savedAppearance === 'system' && prefersDark()),
-  productTypes: null,
+  categories: null,
   affectationTypes: null,
   units: null,
 };
@@ -33,8 +33,8 @@ export const useCatalogsStore = create<CatalogsState>((set) => ({
     const savedIsDark = appearance === 'dark' || (appearance === 'system' && prefersDark());
     set({ isDarkTheme: savedIsDark })
   },
-  setProductTypes: (productTypes) => {
-    set({productTypes})
+  setCategories: (categories) => {
+    set({categories})
   },
   setUnits: (units) => {
     set({units})

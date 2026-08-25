@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductFormRequest;
 use App\Models\Product;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Exception;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -14,7 +15,7 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
-        $products = Product::query()->with(['productType:id,code,name', 'unit']);
+        $products = Product::query()->with(['unit', 'category:id,name']);
 
         /* SEARCH */
         if ($request->filled('search')) {
@@ -25,8 +26,8 @@ class ProductController extends Controller
         }
 
         /* EQUAL */
-        if ($request->filled('product_type_id')) {
-            $products->where('product_type_id', $request->product_type_id);
+        if ($request->filled('category_id')) {
+            $products->where('category_id', $request->category_id);
         }
 
         if ($request->filled('status')) {
@@ -57,8 +58,8 @@ class ProductController extends Controller
                 'price' => $product->price,
                 'min_stock' => $product->min_stock,
                 'brand' => $product->brand,
-                'product_type_id' => $product->product_type_id,
-                'product_type_name' => $product->productType->name,
+                'category_id' => $product->category_id,
+                'category_name' => $product->category->name ?? null,
                 'description' => $product->description,
                 'status' => $product->status,
                 'created_at' => $product->created_at,
@@ -68,7 +69,7 @@ class ProductController extends Controller
 
         return Inertia::render('products/index', [
             'products' => $products,
-            'qrystr' => $request->only(['search', 'product_type_id', 'status', 'sortby', 'page', 'per_page']),
+            'qrystr' => $request->only(['search', 'category_id', 'status', 'sortby', 'page', 'per_page']),
         ]);
     }
 
@@ -85,10 +86,10 @@ class ProductController extends Controller
                 'min_stock' => $request->input('min_stock'),
                 'brand' => $request->input('brand'),
                 'bar_code' => $request->input('bar_code'),
-                'product_type_id' => $request->input('product_type_id'),
                 'affectation_type_id' => $request->input('affectation_type_id'),
                 'description' => $request->input('description'),
                 'details' => $request->input('details'),
+                'features' => $request->input('features'),
             ]);
 
             if ($product) {
@@ -132,10 +133,10 @@ class ProductController extends Controller
                 'min_stock' => $request->input('min_stock'),
                 'brand' => $request->input('brand'),
                 'bar_code' => $request->input('bar_code'),
-                'product_type_id' => $request->input('product_type_id'),
                 'affectation_type_id' => $request->input('affectation_type_id'),
                 'description' => $request->input('description'),
                 'details' => $request->input('details'),
+                'features' => $request->input('features'),
             ]);
 
             // Datos complementarios de la relación uno a uno con p_labtests
@@ -199,5 +200,19 @@ class ProductController extends Controller
         }
 
         return session()->flash('flash', $this->flash);
+    }
+
+    public function productPdf(Product $product)
+    {
+        $product->load(['category', 'unit']);
+
+        $detailsHtml = str_replace(['&nbsp;', "\u{00A0}"], ' ', $product->details);
+
+        $pdf = Pdf::loadView('pdf.product-pdf', [
+            'product' => $product,
+            'detailsHtml' => $detailsHtml,
+        ]);
+
+        return $pdf->stream();
     }
 }

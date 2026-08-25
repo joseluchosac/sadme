@@ -1,13 +1,13 @@
 <?php
 
+use App\Models\Category;
 use App\Models\PLabtest;
 use App\Models\Product;
-use App\Models\ProductType;
 use App\Models\User;
 
 function productPayload(array $overrides = []): array
 {
-    $productType = ProductType::firstOrCreate(['code' => 'EXA'], ['name' => 'Examen', 'status' => 1]);
+    $category = Category::firstOrCreate(['code' => 'EXA'], ['name' => 'Examen', 'status' => 1]);
 
     return array_merge([
         'code' => 'LAB-001',
@@ -15,7 +15,7 @@ function productPayload(array $overrides = []): array
         'unit_code' => 'NIU',
         'price' => 25.5,
         'min_stock' => 10,
-        'product_type_id' => $productType->id,
+        'category_id' => $category->id,
         'affectation_type_id' => 1,
     ], $overrides);
 }

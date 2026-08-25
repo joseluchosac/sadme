@@ -26,12 +26,12 @@ export default function useService<T>() {
     }
   }
 
-  const getProductTypes = async () => {
+  const getCategories = async () => {
     setIsLoading(true);
     setError(null);
     setData(null);
     try {
-      const resp = await axios.get(route('product-types.get-all'));
+      const resp = await axios.get(route('categories.get-all'));
       if (resp.data) {
         setData(resp.data);
       } else {
@@ -39,7 +39,7 @@ export default function useService<T>() {
       }
     } catch (err: any) {
       // setError(err || 'Error en la solicitud');
-      setError(err || 'Error al obtener los tipos de producto');
+      setError(err || 'Error al obtener las categorías');
     } finally {
       setIsLoading(false);
     }
@@ -92,7 +92,7 @@ export default function useService<T>() {
     isLoading,
     error,
     getProduct,
-    getProductTypes,
+    getCategories,
     getUnits,
     getAffectationTypes,
     reset

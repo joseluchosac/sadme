@@ -1,5 +1,5 @@
 import AppLayout from '@/layouts/app-layout';
-import { AffectationType, Flash, MsgType, ProductsPaginated, ProductsQrystr, ProductType, Unit, type BreadcrumbItem } from '@/types';
+import { AffectationType, Category, Flash, MsgType, ProductsPaginated, ProductsQrystr, Unit, type BreadcrumbItem } from '@/types';
 import { Head, router, useForm, usePage } from '@inertiajs/react';
 import { CirclePlus, FileDown, RotateCcw } from 'lucide-react';
 import ProductsTable from './components/products-table';
@@ -25,7 +25,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 
 const productsQrystrInit: ProductsQrystr = {
   search: '',
-  product_type_id: null,
+  category_id: null,
   status: null,
   sortby: null,
   page: null,
@@ -42,15 +42,15 @@ export default function Index({ products, qrystr }: IndexProps) {
   const view = useProductsStore(state => state.view)
   const setView = useProductsStore(state => state.setView);
   const {
-    productTypes,
-    setProductTypes,
+    categories,
+    setCategories,
     units,
     setUnits,
     affectationTypes,
     setAffectationTypes,
   } = useCatalogsStore(state => state)
 
-  const {getProductTypes, data: productTypesData} = useService<ProductType[]>()
+  const {getCategories, data: categoriesData} = useService<Category[]>()
   const {getUnits, data: unitsData} = useService<Unit[]>()
   const {getAffectationTypes, data: affectationTypesData} = useService<AffectationType[]>()
 
@@ -58,7 +58,7 @@ export default function Index({ products, qrystr }: IndexProps) {
 
   const productsQrystr = useForm<ProductsQrystr>({
     search: qrystr.search || '',
-    product_type_id: qrystr.product_type_id || null,
+    category_id: qrystr.category_id || null,
     status: qrystr.status || null,
     sortby: qrystr.sortby || null,
     page: qrystr.page || null,
@@ -72,7 +72,7 @@ export default function Index({ products, qrystr }: IndexProps) {
   const applyFilter = () => {
     const newQueryString = {
       ...(productsQrystr.data.search && { search: productsQrystr.data.search }),
-      ...(productsQrystr.data.product_type_id && { product_type_id: productsQrystr.data.product_type_id }),
+      ...(productsQrystr.data.category_id && { category_id: productsQrystr.data.category_id }),
       ...(productsQrystr.data.status && { status: productsQrystr.data.status }),
       ...(productsQrystr.data.sortby && { sortby: productsQrystr.data.sortby }),
       ...(productsQrystr.data.page && { page: productsQrystr.data.page }),
@@ -111,8 +111,8 @@ export default function Index({ products, qrystr }: IndexProps) {
       applyFilter();
     } else {
       setFirstRender(false);
-      if(!productTypes){
-        getProductTypes();
+      if(!categories){
+        getCategories();
       }
       if(!units){
         getUnits();
@@ -130,9 +130,9 @@ export default function Index({ products, qrystr }: IndexProps) {
   }, [flash]);
 
   useEffect(() => {
-    if (!productTypesData) return;
-    setProductTypes(productTypesData)
-  }, [productTypesData]);
+    if (!categoriesData) return;
+    setCategories(categoriesData)
+  }, [categoriesData]);
 
   useEffect(() => {
     if (!unitsData) return;

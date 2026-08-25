@@ -15,7 +15,7 @@ export default function FilterBadges({ productsQrystr }: FilterBadgesProps) {
   const currentSortField = productsQrystr.data.sortby?.split('-')[0];
   const currentSortOrder = productsQrystr.data.sortby?.split('-')[1] ?? 'asc';
   const sorted = columns.find(el=>el.key == currentSortField)
-  const productTypes = useCatalogsStore(state => state.productTypes);
+  const categories = useCatalogsStore(state => state.categories);
 
   const handleClickBadge = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const field = e.currentTarget.dataset.name;
@@ -24,8 +24,8 @@ export default function FilterBadges({ productsQrystr }: FilterBadgesProps) {
         productsQrystr.setData('search', '');
       } else if (field === 'sort') {
         productsQrystr.setData({ ...productsQrystr.data, sortby: null, page: null });
-      } else if (field === 'product_type_id') {
-        productsQrystr.setData({ ...productsQrystr.data, product_type_id: null, page: null });
+      } else if (field === 'category_id') {
+        productsQrystr.setData({ ...productsQrystr.data, category_id: null, page: null });
       } else if (field === 'status') {
         productsQrystr.setData({ ...productsQrystr.data, status: null, page: null });
       }
@@ -52,13 +52,13 @@ export default function FilterBadges({ productsQrystr }: FilterBadgesProps) {
           <CircleX size={16} className='mr-1' /> Ordenado por: {sorted?.label} {currentSortOrder === 'asc' ? '↑' : '↓'}
         </Badge>
       )}
-      {productsQrystr.data.product_type_id != null && (
+      {productsQrystr.data.category_id != null && (
         <Badge 
           className='bg-indigo-600 cursor-pointer'
-          data-name="product_type_id"
+          data-name="category_id"
           onClick={handleClickBadge}
         >
-          <CircleX size={16} className='mr-1' /> Categoría: {productTypes?.find(el=> el.id == productsQrystr.data.product_type_id)?.name}
+          <CircleX size={16} className='mr-1' /> Categoría: {categories?.find(el=> el.id == productsQrystr.data.category_id)?.name}
         </Badge>
       )}
       {productsQrystr.data.status != null && (

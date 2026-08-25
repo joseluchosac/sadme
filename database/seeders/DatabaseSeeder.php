@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             UnitSeeder::class,
             AffectationTypeSeeder::class,
             CompanySettingSeeder::class,
-            ProductTypeSeeder::class,
+            CategorySeeder::class,
             ProductSeeder::class,
         ]);
 

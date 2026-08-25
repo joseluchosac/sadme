@@ -29,7 +29,7 @@ interface FilterDialogProps {
 export function FilterDialog({ productsQrystr, }: FilterDialogProps) {
   const columns = useProductsStore(state => state.columns);
   const setShow = useProductsStore(state => state.setShow);
-  const productTypes = useCatalogsStore(state => state.productTypes);
+  const categories = useCatalogsStore(state => state.categories);
 
   const currentSortField = productsQrystr.data.sortby?.split('-')[0];
   const currentSortOrder = productsQrystr.data.sortby?.split('-')[1] ?? 'asc';
@@ -91,14 +91,14 @@ export function FilterDialog({ productsQrystr, }: FilterDialogProps) {
             <NativeSelect
               className='w-full dark:[color-scheme:dark]'
               size="sm"
-              value={productsQrystr.data.product_type_id?.toString()}
+              value={productsQrystr.data.category_id?.toString()}
               onChange={(e) => {
                 const value = e.currentTarget.value;
-                productsQrystr.setData('product_type_id', +value);
+                productsQrystr.setData('category_id', +value);
               }}
             >
               <NativeSelectOption value=''>- Todos -</NativeSelectOption>
-              {productTypes && productTypes.map(el => (
+              {categories && categories.map(el => (
                 <NativeSelectOption key={el.id} value={el.id}>{el.name}</NativeSelectOption>
               ))}
             </NativeSelect>

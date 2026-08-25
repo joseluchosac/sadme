@@ -9,22 +9,23 @@ class Product extends Model
     protected $fillable = [
         'code',
         'name',
-        'product_type_id',
         'unit_code',
         'price',
         'min_stock',
         'brand',
         'barcode',
         'affectation_type_id',
+        'category_id',
         'description',
         'details',
+        'features',
         'status',
     ];
 
     // Relación uno a uno inversa
-    public function productType()
+    public function category()
     {
-        return $this->belongsTo(ProductType::class);
+        return $this->belongsTo(Category::class);
     }
 
     // Relación uno a uno inversa
