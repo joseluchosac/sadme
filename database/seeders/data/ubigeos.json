@@ -3196,7 +3196,7 @@
 		},
 		{
 			"code_inei": "030611",
-			"code_reniec": "060711",
+			"code_reniec": "030711",
 			"departamento": "APURIMAC",
 			"provincia": "CHINCHEROS",
 			"distrito": "LOS CHANKAS",
@@ -3205,7 +3205,7 @@
 		},
 		{
 			"code_inei": "030612",
-			"code_reniec": "060712",
+			"code_reniec": "030712",
 			"departamento": "APURIMAC",
 			"provincia": "CHINCHEROS",
 			"distrito": "AHUAYRO",
@@ -15085,7 +15085,7 @@
 		},
 		{
 			"code_inei": "160800",
-			"code_reniec": "160800",
+			"code_reniec": "150800",
 			"departamento": "LORETO",
 			"provincia": "PUTUMAYO",
 			"distrito": null,
@@ -15094,7 +15094,7 @@
 		},
 		{
 			"code_inei": "160801",
-			"code_reniec": "160801",
+			"code_reniec": "150801",
 			"departamento": "LORETO",
 			"provincia": "PUTUMAYO",
 			"distrito": "PUTUMAYO",
@@ -15103,7 +15103,7 @@
 		},
 		{
 			"code_inei": "160802",
-			"code_reniec": "160802",
+			"code_reniec": "150802",
 			"departamento": "LORETO",
 			"provincia": "PUTUMAYO",
 			"distrito": "ROSA PANDURO",
@@ -15112,7 +15112,7 @@
 		},
 		{
 			"code_inei": "160803",
-			"code_reniec": "160803",
+			"code_reniec": "150803",
 			"departamento": "LORETO",
 			"provincia": "PUTUMAYO",
 			"distrito": "TENIENTE MANUEL CLAVERO",
@@ -15121,7 +15121,7 @@
 		},
 		{
 			"code_inei": "160804",
-			"code_reniec": "160804",
+			"code_reniec": "150804",
 			"departamento": "LORETO",
 			"provincia": "PUTUMAYO",
 			"distrito": "YAGUAS",

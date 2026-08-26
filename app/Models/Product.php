@@ -19,8 +19,18 @@ class Product extends Model
         'description',
         'details',
         'features',
+        'observations',
+        'notes',
+        'show_price',
         'status',
     ];
+
+    protected function casts(): array
+    {
+        return [
+            'features' => 'array',
+        ];
+    }
 
     // Relación uno a uno inversa
     public function category()

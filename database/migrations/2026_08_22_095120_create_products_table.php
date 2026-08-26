@@ -25,6 +25,9 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->mediumText('details')->nullable();
             $table->json('features')->nullable();
+            $table->string('observations')->nullable();
+            $table->string('notes')->nullable();
+            $table->boolean('show_price')->default(true);
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

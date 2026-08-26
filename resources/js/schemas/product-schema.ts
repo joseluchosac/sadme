@@ -11,9 +11,12 @@ export const productFormSchema = z.object({
   barcode: z.string().max(20,{error:'El código de barras máximo 20 dígitos'}).nullable(),
   category_id: z.number().nullable(),
   affectation_type_id: z.number().min(1,'Elija la afectación'),
-  description: z.string().max(200,{error:'Máximo 200 caracteres'}),
+  description: z.string().max(255,{error:'Máximo 255 caracteres'}),
   details: z.string(),
   features: z.array(feature).nullable(),
+  observations: z.string().max(255,{error:'Máximo 255 caracteres'}).nullable(),
+  notes: z.string().max(255,{error:'Máximo 255 caracteres'}).nullable(),
+  show_price: z.number().int().min(0).max(1),
   status: z.number().int().min(0).max(1),
 });
 

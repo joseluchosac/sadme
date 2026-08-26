@@ -5,16 +5,15 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { productFormSchema, ProductFormT } from '@/schemas/product-schema';
-import { Feature, Flash, ProductData, } from '@/types';
+import { Flash, ProductData, } from '@/types';
 import { router, useForm } from '@inertiajs/react';
 import { Edit, Trash, X } from 'lucide-react';
-import { FormEvent, useEffect, } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { Spinner } from '@/components/ui/spinner';
 import { useProductsStore } from '@/store/products-store';
 import { CustomTextarea } from '@/components/ui/custom/custom-textarea';
 import useService from '@/hooks/use-service';
 import { toast } from 'sonner';
-import { TableBody, TableCell, TableNowrap, TableRow } from '@/components/ui/custom/table-nowrap';
 import { Checkbox } from '@/components/ui/checkbox';
 import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select';
 import { useCatalogsStore } from '@/store/catalogs-store';
@@ -35,6 +34,9 @@ const formInit: ProductFormT = {
   description: '',
   details: '',
   features: null,
+  observations: null,
+  notes: null,
+  show_price: 1,
   status: 1,
 };
 
@@ -96,7 +98,6 @@ export default function ProductForm() {
   };
 
   const handlePdf = () => {
-    console.log('generar pdf');
     window.open(route('products.product-pdf',{product: form.data.id}), '_blank');
   }
   // Efecto solicitar el producto
@@ -109,8 +110,7 @@ export default function ProductForm() {
   // efecto para actualizar el formulario con el producto solicitado
   useEffect(() => {
     if (!data) return;
-    // const features: Feature[] = [['nombre','jose'],['edad','45'],['alguien','nadie']]
-    const features: Feature[] = data.features ? JSON.parse(data.features) : null
+
     const product: ProductFormT = {
       id: data.id,
       code: data.code,
@@ -124,10 +124,13 @@ export default function ProductForm() {
       affectation_type_id: data.affectation_type_id,
       description: data.description || '',
       details: data.details || '',
-      features: features,
+      features: data.features || null,
+      observations: data.observations || null,
+      notes: data.notes || null,
+      show_price: data.show_price,
       status: data.status,
     }
-    // setPreview(data.image_url || null)
+ 
     form.setData(product);
     form.setDefaults(product);
   }, [data])
@@ -137,6 +140,54 @@ export default function ProductForm() {
       toast.error(error);
     }
   }, [error])
+
+  // Features state
+  const [featureKey, setFeatureKey] = useState('');
+  const [featureValue, setFeatureValue] = useState('');
+  const [editIndex, setEditIndex] = useState<number | null>(null);
+
+  const handleAddFeature = () => {
+    if (!featureKey.trim() || !featureValue.trim()) return;
+    const features = form.data.features ? [...form.data.features] : [];
+    features.push([featureKey.trim(), featureValue.trim()]);
+    form.setData('features', features);
+    setFeatureKey('');
+    setFeatureValue('');
+  };
+
+  const handleUpdateFeature = () => {
+    if (editIndex === null || !featureKey.trim() || !featureValue.trim()) return;
+    const features = [...(form.data.features || [])];
+    features[editIndex] = [featureKey.trim(), featureValue.trim()];
+    form.setData('features', features);
+    setEditIndex(null);
+    setFeatureKey('');
+    setFeatureValue('');
+  };
+
+  const handleDeleteFeature = (index: number) => {
+    const features = (form.data.features || []).filter((_, i) => i !== index);
+    form.setData('features', features.length ? features : null);
+    if (editIndex === index) {
+      setEditIndex(null);
+      setFeatureKey('');
+      setFeatureValue('');
+    }
+  };
+
+  const handleStartEdit = (index: number) => {
+    const features = form.data.features;
+    if (!features || !features[index]) return;
+    setEditIndex(index);
+    setFeatureKey(features[index][0]);
+    setFeatureValue(features[index][1]);
+  };
+
+  const handleCancelEdit = () => {
+    setEditIndex(null);
+    setFeatureKey('');
+    setFeatureValue('');
+  };
 
   return (
     <div className="flex h-full flex-1 flex-col gap-4 rounded-xl relative">
@@ -253,12 +304,12 @@ export default function ProductForm() {
                 <InputError message={form.errors.details} />
               </fieldset>
               {/* details */}
-              <div
+              {/* <div
                 id='preview-quill'
                 className='lg:col-span-12'
                 dangerouslySetInnerHTML={{ __html: form.data.details }}
-              ></div>
-              <fieldset className='flex flex-col gap-2 lg:col-span-12'>
+              ></div> */}
+              {/* <fieldset className='flex flex-col gap-2 lg:col-span-12'>
                 <Label htmlFor='details'>Detalles</Label>
                 <CustomTextarea
                   id='details'
@@ -268,6 +319,34 @@ export default function ProductForm() {
                   onChange={(e) => form.setData('details', e.target.value)}
                 />
                 <InputError message={form.errors.details} />
+              </fieldset> */}
+              {/* observations */}
+              <fieldset className='flex flex-col gap-2 lg:col-span-12'>
+                <Label htmlFor='observations'>Observaciones</Label>
+                <Input
+                  aria-invalid
+                  id='observations'
+                  type='text'
+                  name='observations'
+                  value={form.data.observations ?? ''}
+                  onChange={(e) => form.setData('observations', e.target.value)}
+                // disabled={mode == 'show'}
+                />
+                <InputError message={form.errors.observations} />
+              </fieldset>
+              {/* notes */}
+              <fieldset className='flex flex-col gap-2 lg:col-span-12'>
+                <Label htmlFor='notes'>Notas (uso interno)</Label>
+                <Input
+                  aria-invalid
+                  id='notes'
+                  type='text'
+                  name='notes'
+                  value={form.data.notes ?? ''}
+                  onChange={(e) => form.setData('notes', e.target.value)}
+                // disabled={mode == 'show'}
+                />
+                <InputError message={form.errors.notes} />
               </fieldset>
               <div className='flex flex-col gap-2 lg:col-span-12'>
                 <Tabs className='col-span-12' defaultValue="features">
@@ -277,10 +356,54 @@ export default function ProductForm() {
                   </TabsList>
                   <TabsContent value="features">
                     <div className="rounded-md border px-4 py-2 text-sm grid lg:grid-cols-12 gap-3 pt-4">
-                      <div className='flex flex-col gap-2 lg:col-span-6'>
-                        {form.data.features && form.data.features.map((el, idx)=>(
-                          <div key={idx}>{el[0]}: {el[1]}</div>
+                      <div className='flex flex-col gap-2 lg:col-span-12'>
+                        {form.data.features && form.data.features.map((el, idx) => (
+                          <div key={idx} className='flex items-center gap-2'>
+                            <span className='font-medium min-w-[120px]'>{el[0]}:</span>
+                            <span className='flex-1'>{el[1]}</span>
+                            <Edit
+                              className='cursor-pointer text-blue-500 hover:text-blue-700 shrink-0'
+                              size={16}
+                              onClick={() => handleStartEdit(idx)}
+                            />
+                            <Trash
+                              className='cursor-pointer text-red-500 hover:text-red-700 shrink-0'
+                              size={16}
+                              onClick={() => handleDeleteFeature(idx)}
+                            />
+                          </div>
                         ))}
+                        <div className='flex flex-col gap-2 lg:col-span-6 mt-2'>
+                          <Label>{editIndex !== null ? 'Editar característica' : 'Nueva característica'}</Label>
+                          <div className='flex gap-2'>
+                            <Input
+                              className='h-8'
+                              placeholder='Clave'
+                              value={featureKey}
+                              onChange={(e) => setFeatureKey(e.target.value)}
+                            />
+                            <Input
+                              className='h-8'
+                              placeholder='Valor'
+                              value={featureValue}
+                              onChange={(e) => setFeatureValue(e.target.value)}
+                            />
+                            {editIndex !== null ? (
+                              <>
+                                <Button className='h-8' type='button' variant='outline' onClick={handleUpdateFeature}>
+                                  Guardar
+                                </Button>
+                                <Button className='h-8' type='button' variant='ghost' onClick={handleCancelEdit}>
+                                  Cancelar
+                                </Button>
+                              </>
+                            ) : (
+                              <Button className='h-8' type='button' variant='outline' onClick={handleAddFeature}>
+                                Agregar
+                              </Button>
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </TabsContent>
@@ -309,6 +432,15 @@ export default function ProductForm() {
                   </TabsContent>
                 </Tabs>
               </div>
+              {/* show_price */}
+              <fieldset className='flex items-center gap-2 lg:col-span-12'>
+                <Checkbox
+                  id='show_price'
+                  checked={form.data.show_price === 1}
+                  onCheckedChange={(checked) => form.setData('show_price', checked === true ? 1 : 0)}
+                />
+                <Label htmlFor='show_price'>Mostrar precio</Label>
+              </fieldset>
               {/* status */}
               <fieldset className='flex items-center gap-2 lg:col-span-12'>
                 <Checkbox

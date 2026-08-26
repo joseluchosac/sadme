@@ -11,9 +11,7 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('home');
-Route::get('/pub/precios', function () {
-    return Inertia::render('pub/precios/index');
-})->name('home');
+Route::get('/pub/precios', [ProductController::class, 'getPrices'])->name('pub.precios');
 
 // Route::get('/', function (Request $request) {
 // Si el usuario está logueado, lo enviamos al dashboard
@@ -36,12 +34,12 @@ Route::middleware(['auth'])->group(function () {
 
     // categories
     Route::resource('categories', CategoryController::class)->except(['create', 'show', 'edit']);
-    Route::get('categories/get-all', [CategoryController::class, 'getAll'])->name('categories.get-all');
 
     // catalogs
-    Route::get('catalogs/get-units', [CatalogController::class, 'getUnits'])->name('catalogs.get-units');
-    Route::get('catalogs/get-affectation-types', [CatalogController::class, 'getAffectationTypes'])->name('catalogs.get-affectation-types');
 });
 
-require __DIR__.'/settings.php';
-require __DIR__.'/auth.php';
+Route::get('catalogs/get-units', [CatalogController::class, 'getUnits'])->name('catalogs.get-units');
+Route::get('catalogs/get-affectation-types', [CatalogController::class, 'getAffectationTypes'])->name('catalogs.get-affectation-types');
+Route::get('categories/get-all', [CategoryController::class, 'getAll'])->name('categories.get-all');
+require __DIR__ . '/settings.php';
+require __DIR__ . '/auth.php';

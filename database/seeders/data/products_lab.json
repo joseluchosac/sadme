@@ -2,559 +2,931 @@
 		{
 			"code": "LT-001",
 			"name": "Ácido úrico",
+			"unit_code": "ZZ",
+			"price": 25.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 25.00
+			"description": "Evalúa los niveles de ácido úrico para diagnosticar o monitorear la gota o cálculos renales.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-002",
 			"name": "Bilirrubina total y fraccionada",
+			"unit_code": "ZZ",
+			"price": 15.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 15.00
+			"description": "Evalúa el funcionamiento hepático y la presencia de hemólisis o vía biliar obstruida.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-003",
 			"name": "Calcio sérico",
+			"unit_code": "ZZ",
+			"price": 25.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 25.00
+			"description": "Mide la cantidad de calcio en sangre para evaluar salud ósea, renal y de las glándulas paratiroides.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-004",
 			"name": "Colesterol total",
+			"unit_code": "ZZ",
+			"price": 12.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 12.00
+			"description": "Mide el nivel total de lípidos y colesterol en la sangre para evaluar el riesgo cardiovascular.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 - 12 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-005",
 			"name": "Creatinina",
+			"unit_code": "ZZ",
+			"price": 13.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 13.00
+			"description": "Evalúa la función renal midiendo el producto de desecho del metabolismo muscular.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-006",
 			"name": "Depuración de creatinina",
+			"unit_code": "ZZ",
+			"price": 26.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 26.00
+			"description": "Compara la creatinina en sangre y orina para calcular la tasa de filtración glomerular renal.",
+			"features": "[[\"Muestra\", \"Sangre y orina\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 a 48 h\"]]"
 		},
 		{
 			"code": "LT-007",
 			"name": "Electrolitos (Na, K, Cl)",
+			"unit_code": "ZZ",
+			"price": 40.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 40.00
+			"description": "Mide los niveles de sodio, potasio y cloro para evaluar el equilibrio hidroelectrolítico y ácido-base.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-008",
 			"name": "Fosfatasa Alcalina (FA)",
+			"unit_code": "ZZ",
+			"price": 12.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 12.00
+			"description": "Enzima presente principalmente en los huesos y el hígado; útil para detectar trastornos en estas áreas.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-009",
 			"name": "Gamma Glutamil Transpeptidasa (GGT)",
+			"unit_code": "ZZ",
+			"price": 25.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 25.00
+			"description": "Enzima hepática sensible para detectar afecciones biliares y consumo crónico de alcohol.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-010",
 			"name": "Glucosa basal",
+			"unit_code": "ZZ",
+			"price": 12.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 12.00
+			"description": "Mide la concentración de glucosa (azúcar) en sangre en ayunas para el diagnóstico de diabetes.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 - 12 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-011",
 			"name": "Glucosa post prandial",
+			"unit_code": "ZZ",
+			"price": 26.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 26.00
+			"description": "Mide el nivel de glucosa en sangre 2 horas después de haber ingerido alimentos.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"2 h*\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-012",
 			"name": "Hemoglobina glucosilada",
+			"unit_code": "ZZ",
+			"price": 39.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 39.00
+			"description": "Indica el promedio del control de los niveles de glucosa en sangre durante los últimos 2 a 3 meses.",
+			"features": "[[\"Muestra\", \"Sangre EDTA\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-013",
 			"name": "Microalbuminuria orina 24h",
+			"unit_code": "ZZ",
+			"price": 25.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 25.00
+			"description": "Cuantifica pequeñas cantidades de albúmina en la orina acumulada durante 24 horas para detectar nefropatía diabética temprana.",
+			"features": "[[\"Muestra\", \"Orina 24h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-014",
 			"name": "Proteina total y fraccionada",
+			"unit_code": "ZZ",
+			"price": 15.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 15.00
+			"description": "Mide los niveles de albúmina y globulinas en la sangre para evaluar el estado nutricional e inmunológico.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-015",
 			"name": "Proteinuria orina 24h",
+			"unit_code": "ZZ",
+			"price": 25.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 25.00
+			"description": "Mide la cantidad total de proteínas expulsadas en la orina recolectada durante 24 horas.",
+			"features": "[[\"Muestra\", \"Orina *\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-016",
 			"name": "Tolerancia a la glucosa",
+			"unit_code": "ZZ",
+			"price": 26.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 26.00
+			"description": "Mide la respuesta metabólica tras la sobrecarga oral con 75g de glucosa.",
+			"features": "[[\"Muestra\", \"Sangre *\"], [\"Ayuno\", \"8 - 12 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-017",
 			"name": "Transaminasa TGO",
+			"unit_code": "ZZ",
+			"price": 28.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 28.00
+			"description": "Enzima hepática y cardíaca que indica posible lesión o daño celular.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-018",
 			"name": "Transaminasa TGP",
+			"unit_code": "ZZ",
+			"price": 28.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 28.00
+			"description": "Enzima presente mayoritariamente en el hígado, indicador de citolisis o inflamación hepática.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-019",
 			"name": "Triglicéridos",
+			"unit_code": "ZZ",
+			"price": 12.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 12.00
+			"description": "Cuantifica los niveles de esta clase de lípido en sangre.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"12 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-020",
 			"name": "Úrea",
+			"unit_code": "ZZ",
+			"price": 13.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 13.00
+			"description": "Evalúa el producto de desecho del metabolismo de proteínas filtrado por los riñones.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-021",
 			"name": "Vitamina D",
+			"unit_code": "ZZ",
+			"price": 185.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 185.00
+			"description": "Mide los niveles de 25-hidroxivitamina D para la salud ósea y el sistema inmunitario.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-022",
 			"name": "Hemoglobina",
+			"unit_code": "ZZ",
+			"price": 15.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 15.00
+			"description": "Proteína en los glóbulos rojos encargada de transportar oxígeno; clave para detectar anemia.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-023",
 			"name": "Hematocrito",
+			"unit_code": "ZZ",
+			"price": 13.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 13.00
+			"description": "Porcentaje del volumen total de la sangre compuesto por glóbulos rojos.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-024",
 			"name": "Hemograma completo",
+			"unit_code": "ZZ",
+			"price": 18.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 18.00
+			"description": "Evaluación general del número y morfología de hematíes, leucocitos y plaquetas.",
+			"features": "[[\"Muestra\", \"Sangre EDTA\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-025",
 			"name": "Recuento de plaquetas",
+			"unit_code": "ZZ",
+			"price": 18.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 18.00
+			"description": "Mide la cantidad de plaquetas (trombocitos) por microlitro para evaluar la capacidad de hemostasia.",
+			"features": "[[\"Muestra\", \"Sangre EDTA\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-026",
 			"name": "Recuento de reticulocitos",
+			"unit_code": "ZZ",
+			"price": 17.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 17.00
+			"description": "Determina la cantidad de glóbulos rojos jóvenes para evaluar la respuesta de la médula ósea.",
+			"features": "[[\"Muestra\", \"Sangre EDTA\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-027",
 			"name": "Tiempo de Coagulación (TC) y Sangría (TS)",
+			"unit_code": "ZZ",
+			"price": 18.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 18.00
+			"description": "Evalúa el tiempo de respuesta hemostática básica y primaria.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-028",
 			"name": "Tiempo de Protrombina (TP)",
+			"unit_code": "ZZ",
+			"price": 29.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 29.00
+			"description": "Mide el tiempo de coagulación por vía extrínseca y evalúa el efecto de anticoagulantes orales.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-029",
 			"name": "Tiempo de Tromboplastina (TTP)",
+			"unit_code": "ZZ",
+			"price": 34.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 34.00
+			"description": "Evalúa la vía intrínseca de la coagulación y sirve para el seguimiento del uso de heparina.",
+			"features": "[[\"Muestra\", \"Sangre *\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-030",
 			"name": "Velocidad de Sedimentación Globular (VSG)",
+			"unit_code": "ZZ",
+			"price": 16.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 16.00
+			"description": "Mide la rapidez con que los eritrocitos se sedimentan; marcador inespecífico de inflamación.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-031",
 			"name": "Grupo sanguíneo y RH",
+			"unit_code": "ZZ",
+			"price": 15.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 15.00
+			"description": "Determina el grupo sanguíneo (A, B, AB, O) y el factor Rh (+ o -).",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-032",
 			"name": "AFP",
+			"unit_code": "ZZ",
+			"price": 43.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 43.00
+			"description": "Marcador tumoral e indicador de desarrollo fetal (Alfa-fetoproteína).",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-033",
 			"name": "CA 125",
+			"unit_code": "ZZ",
+			"price": 50.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 50.00
+			"description": "Marcador tumoral utilizado principalmente en el seguimiento del cáncer de ovario.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-034",
 			"name": "CA 19.9",
+			"unit_code": "ZZ",
+			"price": 58.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 58.00
+			"description": "Marcador tumoral utilizado principalmente para el cáncer de páncreas y vías biliares.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-035",
 			"name": "CA 15.3",
+			"unit_code": "ZZ",
+			"price": 52.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 52.00
+			"description": "Marcador tumoral utilizado principalmente en la monitorización del cáncer de mama.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-036",
 			"name": "CEA",
+			"unit_code": "ZZ",
+			"price": 40.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 40.00
+			"description": "Antígeno Carcinoembrionario, marcador tumoral para cáncer de colon y otros órganos digestivos.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-037",
 			"name": "PSA total",
+			"unit_code": "ZZ",
+			"price": 40.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 40.00
+			"description": "Antígeno prostático específico, utilizado para el tamizaje y monitoreo de alteraciones en la próstata.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-038",
 			"name": "PSA total y PSA libre",
+			"unit_code": "ZZ",
+			"price": 80.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 80.00
+			"description": "Cálculo del cociente PSA libre/total para discriminar entre hiperplasia benigna de próstata y cáncer prostático.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-039",
 			"name": "Aglutinaciones",
+			"unit_code": "ZZ",
+			"price": 20.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 20.00
+			"description": "Prueba serológica (Reacción de Widal) para detectar anticuerpos contra Salmonella y Brucella.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"4 - 8 h\"]]"
 		},
 		{
 			"code": "LT-040",
 			"name": "Antiestreptolisina O - ASO",
+			"unit_code": "ZZ",
+			"price": 21.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 21.00
+			"description": "Detecta anticuerpos contra la estreptolisina O producida por el estreptococo del grupo A.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-041",
 			"name": "Anti DNA ds",
+			"unit_code": "ZZ",
+			"price": 45.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 45.00
+			"description": "Detección de anticuerpos contra ADN de doble cadena, altamente específico para Lupus Eritematoso Sistémico (LES).",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"]]"
 		},
 		{
 			"code": "LT-042",
 			"name": "Anti ENA",
+			"unit_code": "ZZ",
+			"price": 220.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 220.00
+			"description": "Panel de anticuerpos contra antígenos nucleares extractables para diagnosticar enfermedades autoinmunes del tejido conectivo.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"3 a 5 días hábiles\"]]"
 		},
 		{
 			"code": "LT-043",
 			"name": "Anti Nucleares - ANA",
+			"unit_code": "ZZ",
+			"price": 45.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 45.00
+			"description": "Prueba de cribado para detectar anticuerpos antinucleares asociados con enfermedades autoinmunes.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"48 a 72 h\"]]"
 		},
 		{
 			"code": "LT-044",
 			"name": "Anticuerpo anti-tiroglobulina (anti TG)",
+			"unit_code": "ZZ",
+			"price": 43.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 43.00
+			"description": "Mide anticuerpos contra la tiroglobulina, utilizado en el seguimiento de patologías o cáncer tiroideo.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-045",
 			"name": "Anticuerpo anti-peroxidasa tioidea (anti TPO)",
+			"unit_code": "ZZ",
+			"price": 43.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 43.00
+			"description": "Mide anticuerpos dirigidos contra la enzima TPO, indicador común de tiroiditis autoinmune (como Hashimoto).",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-046",
 			"name": "Anti CCP",
+			"unit_code": "ZZ",
+			"price": 145.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 145.00
+			"description": "Anticuerpos anti-péptidos citrunilados cíclicos para el diagnóstico precoz y específico de artritis reumatoide.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"48 - 72 h\"]]"
 		},
 		{
 			"code": "LT-047",
 			"name": "Factor reumatoideo",
+			"unit_code": "ZZ",
+			"price": 18.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 18.00
+			"description": "Autoanticuerpos asociados a enfermedades autoinmunes, principalmente artritis reumatoide.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-048",
 			"name": "Proteina C Reactiva - PCR",
+			"unit_code": "ZZ",
+			"price": 18.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 18.00
+			"description": "Marcador inespecífico de inflamación o infección aguda en el organismo.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-049",
 			"name": "RPR - VDRL (Sífilis)",
+			"unit_code": "ZZ",
+			"price": 16.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 16.00
+			"description": "Prueba no treponémica para el diagnóstico y control de la infección por sífilis.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-050",
 			"name": "Hepatitis A - IgM",
+			"unit_code": "ZZ",
+			"price": 54.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 54.00
+			"description": "Detección específica de anticuerpos IgM para el diagnóstico de infección aguda por Hepatitis A.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-051",
 			"name": "Hepatitis A - Anticuerpo total",
+			"unit_code": "ZZ",
+			"price": 52.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 52.00
+			"description": "Mide anticuerpos IgG e IgM frente al virus de la Hepatitis A (infección previa o inmunidad por vacuna).",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-052",
 			"name": "Hepatitis B - HBsAg",
+			"unit_code": "ZZ",
+			"price": 45.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 45.00
+			"description": "Antígeno de superficie de la Hepatitis B; primer marcador de presencia de infección por VHB.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-053",
 			"name": "Hepatitis B - HBeAg",
+			"unit_code": "ZZ",
+			"price": 49.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 49.00
+			"description": "Antígeno e de la Hepatitis B; marcador de alta replicación viral e infectividad.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-054",
 			"name": "Hepatitis B - Anti HBc IgM",
+			"unit_code": "ZZ",
+			"price": 46.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 46.00
+			"description": "Marcador de infección aguda o reciente por el virus de la Hepatitis B.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-055",
 			"name": "Hepatitis B - Anti HBc",
+			"unit_code": "ZZ",
+			"price": 45.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 45.00
+			"description": "Anticuerpo contra el antígeno del núcleo del virus de la Hepatitis B; indica exposición previa o infección activa.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 a 48 h\"]]"
 		},
 		{
 			"code": "LT-056",
 			"name": "Hepatitis B - Anti HBs",
+			"unit_code": "ZZ",
+			"price": 37.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 37.00
+			"description": "Anticuerpo de superficie de la Hepatitis B; su presencia indica inmunidad conseguida por vacuna o curación.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-057",
 			"name": "Hepatitis C - Anticuerpo total",
+			"unit_code": "ZZ",
+			"price": 54.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 54.00
+			"description": "Prueba serológica para detectar la presencia de anticuerpos contra el virus de la Hepatitis C.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-058",
 			"name": "HIV 1-2 (Ac-Ag)",
+			"unit_code": "ZZ",
+			"price": 38.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 38.00
+			"description": "Prueba combinada de 4ta generación que detecta anticuerpos de VIH 1 y 2 junto con el antígeno p24.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-059",
 			"name": "H. Pylori, Anticuerpos (IgG, IgM)",
+			"unit_code": "ZZ",
+			"price": 88.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 88.00
+			"description": "Detección de respuesta inmune frente a la bacteria Helicobacter Pylori, asociada a gastritis y úlceras.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-060",
 			"name": "Coprológico funcional",
+			"unit_code": "ZZ",
+			"price": 25.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 25.00
+			"description": "Análisis físico, químico y microscópico de heces para evaluar el proceso digestivo y la absorción de nutrientes.",
+			"features": "[[\"Muestra\", \"Heces\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-061",
 			"name": "Cultivo de orina - Urocultivo",
+			"unit_code": "ZZ",
+			"price": 40.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 40.00
+			"description": "Aislamiento e identificación de bacterias o microorganismos causantes de infecciones del tracto urinario.",
+			"features": "[[\"Muestra\", \"Orina *\"]]"
 		},
 		{
 			"code": "LT-062",
 			"name": "Cultivo de semen",
+			"unit_code": "ZZ",
+			"price": 40.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 40.00
+			"description": "Detección de bacterias patógenas en la muestra seminal.",
+			"features": "[[\"Muestra\", \"Semen\"], [\"Resultado\", \"48 - 72 h\"]]"
 		},
 		{
 			"code": "LT-063",
 			"name": "Cultivo de secreción vaginal",
+			"unit_code": "ZZ",
+			"price": 40.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 40.00
+			"description": "Identificación de microorganismos patógenos (hongos, bacterias) en la vagina.",
+			"features": "[[\"Muestra\", \"Isopado vaginal\"], [\"Resltado\", \"48 - 72 h\"]]"
 		},
 		{
 			"code": "LT-064",
 			"name": "Exámen completo de orina",
+			"unit_code": "ZZ",
+			"price": 15.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 15.00
+			"description": "Análisis físico, químico y microscópico del sedimento urinario para la detección de patologías renales o metabólicas.",
+			"features": "[[\"Muestra\", \"Orina\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-065",
 			"name": "Hongos (KOH)",
+			"unit_code": "ZZ",
+			"price": 15.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 15.00
+			"description": "Examen directo microscópico con hidróxido de potasio para la identificación de estructuras fúngicas en escamas o uñas.",
+			"features": "[[\"Muestra\", \"Rasp. piel\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-066",
 			"name": "Investigación de ácaros",
+			"unit_code": "ZZ",
+			"price": 0.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 0.00
+			"description": "Búsqueda microscópica directa para diagnosticar parasitosis cutáneas como la escabiosis (sarna).",
+			"features": "[[\"Muestra\", \"Raspado *\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-067",
 			"name": "Parasitológico directo de heces",
+			"unit_code": "ZZ",
+			"price": 11.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 11.00
+			"description": "Búsqueda microscópica de quistes, trofozoítos o huevos de parásitos en muestras fecales.",
+			"features": "[[\"Muestra\", \"Heces\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-068",
 			"name": "Reacción inflamatoria de heces",
+			"unit_code": "ZZ",
+			"price": 15.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 15.00
+			"description": "Determinación de la presencia de leucocitos en materia fecal para orientar el origen de una gastroenteritis (infeccioso/invasivo).",
+			"features": "[[\"Muestra\", \"Heces\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-069",
 			"name": "Test de Graham",
+			"unit_code": "ZZ",
+			"price": 15.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 15.00
+			"description": "Muestra de la zona perianal recolectada con cinta adhesiva para identificar huevos de Enterobius vermicularis (oxiuros).",
+			"features": "[[\"Muestra\", \"Cinta *\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-070",
 			"name": "Thevenon en heces",
+			"unit_code": "ZZ",
+			"price": 14.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 14.00
+			"description": "Detecta la presencia de sangre oculta en la materia fecal para el despistaje de sangrado digestivo.",
+			"features": "[[\"Muestra\", \"Heces\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-071",
 			"name": "Ácido fólico",
+			"unit_code": "ZZ",
+			"price": 40.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 40.00
+			"description": "Mide los niveles de vitamina B9 en la sangre, esencial para la producción de glóbulos rojos y la síntesis de ADN.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-072",
 			"name": "Ferritina",
+			"unit_code": "ZZ",
+			"price": 37.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 37.00
+			"description": "Mide las reservas de hierro depositadas en el organismo.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-073",
 			"name": "Vitamina B12",
+			"unit_code": "ZZ",
+			"price": 43.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 43.00
+			"description": "Mide el nivel de cobalamina, vital para la función neurológica y formación de células sanguíneas.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-074",
 			"name": "ACTH",
+			"unit_code": "ZZ",
+			"price": 68.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 68.00
+			"description": "Cuantifica la hormona adrenocorticotrópica para evaluar trastornos de las glándulas suprarrenales o la hipófisis.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 - 12 h\"], [\"Resultado\", \"48 - 72 h\"]]"
 		},
 		{
 			"code": "LT-075",
 			"name": "Cortisol",
+			"unit_code": "ZZ",
+			"price": 35.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 35.00
+			"description": "Mide los niveles de la hormona del estrés producida por la corteza suprarrenal.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-076",
 			"name": "DHEAS",
+			"unit_code": "ZZ",
+			"price": 40.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 40.00
+			"description": "Mide la Dehidroepiandrosterona sulfato, andrógeno producido casi en su totalidad por las glándulas suprarrenales.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-077",
 			"name": "Estradiol",
+			"unit_code": "ZZ",
+			"price": 35.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 35.00
+			"description": "Cuantifica la principal forma de estrógeno para evaluar el funcionamiento ovárico y la fertilidad.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-078",
 			"name": "FSH",
+			"unit_code": "ZZ",
+			"price": 35.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 35.00
+			"description": "Hormona Folículo Estimulante, evalúa la función ovárica/testicular y la fertilidad.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-079",
 			"name": "LH",
+			"unit_code": "ZZ",
+			"price": 35.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 35.00
+			"description": "Hormona Luteinizante, regula la ovulación en mujeres y la síntesis de testosterona en hombres.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-080",
 			"name": "Peptido C",
+			"unit_code": "ZZ",
+			"price": 69.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 69.00
+			"description": "Evalúa la cantidad de producción propia de insulina por el páncreas.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"4 - 10 h\"], [\"Resultado\", \"48 - 72 h\"]]"
 		},
 		{
 			"code": "LT-081",
 			"name": "Progesterona",
+			"unit_code": "ZZ",
+			"price": 37.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 37.00
+			"description": "Mide el nivel de la hormona encargada de preparar el endometrio para la implantación y el embarazo.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 a 48 h\"]]"
 		},
 		{
 			"code": "LT-082",
 			"name": "Prolactina",
+			"unit_code": "ZZ",
+			"price": 40.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 40.00
+			"description": "Hormona producida por la hipófisis; sus niveles elevados pueden causar alteración menstrual o infertilidad.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h *\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-083",
 			"name": "Testosterona total",
+			"unit_code": "ZZ",
+			"price": 38.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 38.00
+			"description": "Mide los niveles de la principal hormona androgénica en el cuerpo.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-084",
 			"name": "TSH",
+			"unit_code": "ZZ",
+			"price": 34.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 34.00
+			"description": "Hormona Estimulante de la Tiroides, prueba principal de cribado para el hipo o hipertiroidismo.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-085",
 			"name": "T4L",
+			"unit_code": "ZZ",
+			"price": 36.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 36.00
+			"description": "Mide la fracción libre de la tiroxina, la hormona tiroidea circulante más abundante.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		},
 		{
 			"code": "LT-086",
 			"name": "T3L",
+			"unit_code": "ZZ",
+			"price": 36.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 36.00
+			"description": "Mide la fracción libre de la triyodotironina, hormona tiroidea activa.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LT-087",
 			"name": "Sub unidad beta-HCG",
+			"unit_code": "ZZ",
+			"price": 0.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 0.00
+			"description": "Cuantificación de la hormona gonadotropina coriónica humana para diagnóstico de embarazo o seguimiento de tumores germinales.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LP-001",
 			"name": "Perfil de coagulación",
+			"unit_code": "ZZ",
+			"price": 130.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 130.00
+			"description": "Conjunto de pruebas (TP, TTP, Fibronógeno, Plaquetas) para verificar la capacidad del cuerpo para formar coágulos.",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LP-002",
 			"name": "Perfil hepático",
+			"unit_code": "ZZ",
+			"price": 70.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 70.00
+			"description": "Evaluación del estado y funcionamiento del hígado (Bilirrubinas, TGO, TGP, FA, GGT, Proteínas).",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LP-003",
 			"name": "Perfil lipídico completo",
+			"unit_code": "ZZ",
+			"price": 40.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 40.00
+			"description": "Análisis cuantitativo de lípidos en sangre (Colesterol total, HDL, LDL, VLDL, Triglicéridos).",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"12 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LP-004",
 			"name": "Perfil preoperatorio",
+			"unit_code": "ZZ",
+			"price": 140.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 140.00
+			"description": "Conjunto de análisis requeridos antes de una intervención quirúrgica (Hemograma, Coagulación, Glucosa, Creatinina, Grupo/Rh).",
+			"features": "[[\"Muestra\", \"Sangre y orina\"], [\"Ayuno\", \"8 - 12 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LP-005",
 			"name": "Perfil renal",
+			"unit_code": "ZZ",
+			"price": 75.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 75.00
+			"description": "Evaluación del estado de la función renal (Úrea, Creatinina, Ácido Úrico, Electrolitos).",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 h\"]]"
 		},
 		{
 			"code": "LP-006",
 			"name": "Perfil tiroideo",
+			"unit_code": "ZZ",
+			"price": 85.00,
+			"affectation_type_id": 2,
 			"category_id": 2,
-			"price": 85.00
+			"description": "Evaluación integral de la función de la glándula tiroides (TSH, T3 libre, T4 libre).",
+			"features": "[[\"Muestra\", \"Sangre\"], [\"Ayuno\", \"8 h\"], [\"Resultado\", \"24 - 48 h\"]]"
 		}
 	]

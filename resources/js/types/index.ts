@@ -217,7 +217,10 @@ export interface Product {
   affectation_type_id: number;
   description: string;
   details: string;
-  features: string;
+  features: Feature[] | null;
+  observations: string;
+  notes: string;
+  show_price: number;
   status: number;
   created_at?: string;
   updated_at?: string;
@@ -245,3 +248,8 @@ export interface Category {
 }
 
 export type Feature = [string, string]
+
+// prices
+export type PricesQrystr = Qrystr & {
+  category_id: number | null;
+}
