@@ -95,6 +95,7 @@ class ProductController extends Controller
                 'observations' => $request->input('observations'),
                 'notes' => $request->input('notes'),
                 'show_price' => $request->input('show_price'),
+                'status' => $request->input('status'),
             ]);
 
             if ($product) {
@@ -147,6 +148,7 @@ class ProductController extends Controller
                 'observations' => $request->input('observations'),
                 'notes' => $request->input('notes'),
                 'show_price' => $request->input('show_price'),
+                'status' => $request->input('status'),
             ]);
 
             // Datos complementarios de la relación uno a uno con p_labtests
@@ -193,6 +195,16 @@ class ProductController extends Controller
 
     public function getProduct(Product $product)
     {
+        $product = $product->toArray();
+        $product['details'] = $product['details'] ? str_replace(['&nbsp;', "\u{00A0}"], ' ', $product['details']) : $product['details'] ;
+        return response()->json($product);
+    }
+
+    // Obtiene datos del producto para la vista publica
+    public function getProductPublic(Product $product)
+    {
+        $product = $product->toArray();
+        $product['details'] = $product['details'] ? str_replace(['&nbsp;', "\u{00A0}"], ' ', $product['details']) : $product['details'] ;
         return response()->json($product);
     }
 

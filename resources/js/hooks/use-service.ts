@@ -26,6 +26,26 @@ export default function useService<T>() {
     }
   }
 
+  // Obtiene datos del producto para la vista privada
+  const getProductPublic = async (id: number) => {
+    setIsLoading(true);
+    setError(null);
+    setData(null);
+    try {
+      const resp = await axios.get(route('products-pub.get', id));
+      if (resp.data) {
+        setData(resp.data);
+      } else {
+        setError(resp.data.message || 'Error en la consulta');
+      }
+    } catch (err: any) {
+      // setError(err || 'Error en la solicitud');
+      setError(err || 'Error al obtener el producto');
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   const getCategories = async () => {
     setIsLoading(true);
     setError(null);
@@ -63,6 +83,7 @@ export default function useService<T>() {
       setIsLoading(false);
     }
   }
+
   const getAffectationTypes = async () => {
     setIsLoading(true);
     setError(null);
@@ -82,7 +103,6 @@ export default function useService<T>() {
     }
   }
 
-
   const reset = () => {
     setData(null)
   }
@@ -92,6 +112,7 @@ export default function useService<T>() {
     isLoading,
     error,
     getProduct,
+    getProductPublic,
     getCategories,
     getUnits,
     getAffectationTypes,

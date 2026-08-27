@@ -21,7 +21,7 @@ interface QuillEditorProps {
     placeholder?: string;
     error?: string;
 }
-// Estilos para usar en tema oscuro
+
 const quillIsolationStyles = `
   .ql-toolbar.ql-snow,
   .ql-container.ql-snow {
@@ -275,20 +275,30 @@ const quillIsolationStyles = `
   .ql-snow .ql-tooltip a.ql-remove::before { color: #06c !important; }
 
   .ql-snow a { color: #06c !important; }
-  
 `;
 
 export default function QuillEditor({ value, onChange, placeholder, error }: QuillEditorProps) {
     const modules = {
-        toolbar: [
-            [{ header: [1, 2, 3, false] }],
-            ['bold', 'italic', 'underline', 'strike'],
-            [{ color: [] }, { background: [] }],
-            [{ list: 'ordered' }, { list: 'bullet' }],
-            [{ align: [] }],
-            [{ 'margin-bottom': ['0', '05em', '1em', '15em', '2em', '3em'] }],
-            ['clean'],
-        ],
+        toolbar: {
+            container: [
+                [{ header: [1, 2, 3, false] }],
+                ['bold', 'italic', 'underline', 'strike'],
+                [{ color: [] }, { background: [] }],
+                [{ list: 'ordered' }, { list: 'bullet' }],
+                [{ align: [] }],
+                [{ 'margin-bottom': ['0', '05em', '1em', '15em', '2em', '3em'] }],
+                ['link', 'tab', 'clean'],
+            ],
+            handlers: {
+                tab(this: Quill) {
+                    const range = this.getSelection();
+                    if (range) {
+                        this.insertText(range.index, '\t', Quill.sources.USER);
+                        this.setSelection(range.index + 1, Quill.sources.SILENT);
+                    }
+                },
+            },
+        },
     };
 
     return (

@@ -100,46 +100,7 @@ export default function ProductForm() {
   const handlePdf = () => {
     window.open(route('products.product-pdf',{product: form.data.id}), '_blank');
   }
-  // Efecto solicitar el producto
-  useEffect(() => {
-    if (productId) {
-      getProduct(productId);
-    }
-  }, [productId]);
-
-  // efecto para actualizar el formulario con el producto solicitado
-  useEffect(() => {
-    if (!data) return;
-
-    const product: ProductFormT = {
-      id: data.id,
-      code: data.code,
-      name: data.name,
-      unit_code: data.unit_code,
-      price: Number(data.price),
-      min_stock: data.min_stock,
-      brand: data.brand || null,
-      barcode: data.barcode || null,
-      category_id: data.category_id,
-      affectation_type_id: data.affectation_type_id,
-      description: data.description || '',
-      details: data.details || '',
-      features: data.features || null,
-      observations: data.observations || null,
-      notes: data.notes || null,
-      show_price: data.show_price,
-      status: data.status,
-    }
- 
-    form.setData(product);
-    form.setDefaults(product);
-  }, [data])
-
-  useEffect(() => {
-    if (error) {
-      toast.error(error);
-    }
-  }, [error])
+  
 
   // Features state
   const [featureKey, setFeatureKey] = useState('');
@@ -189,6 +150,47 @@ export default function ProductForm() {
     setFeatureValue('');
   };
 
+  // Efecto solicitar el producto
+  useEffect(() => {
+    if (productId) {
+      getProduct(productId);
+    }
+  }, [productId]);
+
+  // efecto para actualizar el formulario con el producto solicitado
+  useEffect(() => {
+    if (!data) return;
+
+    const product: ProductFormT = {
+      id: data.id,
+      code: data.code,
+      name: data.name,
+      unit_code: data.unit_code,
+      price: Number(data.price),
+      min_stock: data.min_stock,
+      brand: data.brand || null,
+      barcode: data.barcode || null,
+      category_id: data.category_id,
+      affectation_type_id: data.affectation_type_id,
+      description: data.description || '',
+      details: data.details || '',
+      features: data.features || null,
+      observations: data.observations || null,
+      notes: data.notes || null,
+      show_price: data.show_price,
+      status: data.status,
+    }
+ 
+    form.setData(product);
+    form.setDefaults(product);
+  }, [data])
+
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+    }
+  }, [error]);
+  
   return (
     <div className="flex h-full flex-1 flex-col gap-4 rounded-xl relative">
       <Card className='lg:mx-auto max-w-2xl overflow-hidden'>
@@ -304,11 +306,11 @@ export default function ProductForm() {
                 <InputError message={form.errors.details} />
               </fieldset>
               {/* details */}
-              {/* <div
+              <div
                 id='preview-quill'
                 className='lg:col-span-12'
-                dangerouslySetInnerHTML={{ __html: form.data.details }}
-              ></div> */}
+                dangerouslySetInnerHTML={{ __html: form.data.details.replace(/&nbsp;/g, ' ') }}
+              ></div>
               {/* <fieldset className='flex flex-col gap-2 lg:col-span-12'>
                 <Label htmlFor='details'>Detalles</Label>
                 <CustomTextarea

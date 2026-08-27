@@ -12,14 +12,14 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            UbigeoSeeder::class,
+            // UbigeoSeeder::class,
             RoleSeeder::class,
             UserSeeder::class,
             UnitSeeder::class,
             AffectationTypeSeeder::class,
             CompanySettingSeeder::class,
             CategorySeeder::class,
-            ProductSeeder::class,
+            // ProductSeeder::class,
         ]);
 
         // User::factory(10)->create();

@@ -5,12 +5,14 @@ import { Clock, Droplets, UtensilsCrossed } from "lucide-react"
 
 interface Props {
   product: ProductItem
+  onClick?: (product: ProductItem) => void
 }
-export default function ProductCard({ product }: Props) {
+export default function ProductCard({ product, onClick }: Props) {
   return (
     <article
       key={product.id}
       className="flex touch-manipulation select-none flex-col gap-3 rounded-2xl border bg-card p-4 shadow-sm transition active:scale-[0.99] md:p-5"
+      onClick={() => onClick?.(product)}
     >
       <div className="flex items-center justify-between gap-2">
         <Badge variant="secondary" className="rounded-full px-3 py-1 text-xs">
@@ -34,7 +36,6 @@ export default function ProductCard({ product }: Props) {
         <span className="text-xs uppercase tracking-wide text-muted-foreground">Precio</span>
         <p className="text-2xl font-extrabold tabular-nums text-primary md:text-3xl">
           {!!product.show_price ? `S/ ${Number(product.price).toFixed(2)}` : 'No disp.'}
-          
         </p>
       </div>
     </article>
@@ -44,16 +45,16 @@ export default function ProductCard({ product }: Props) {
 function Features({ features }: { features: Feature[] }) {
   // Las siguentes características saldrá en el card
   const myFeatures = [
-    {clave: 'muestra' },
-    {clave: 'ayuno' },
-    {clave: 'resultado' }
+    { clave: 'muestra' },
+    { clave: 'ayuno' },
+    { clave: 'resultado' }
   ];
 
   const featuresFiltered = features.filter(feature => {
     const clave = feature[0].toLocaleLowerCase();
     if (myFeatures.some(i => i.clave.toLocaleLowerCase() == clave)) return true;
     return false
-  }).map(el=>({
+  }).map(el => ({
     clave: el[0],
     valor: el[1]
   }))

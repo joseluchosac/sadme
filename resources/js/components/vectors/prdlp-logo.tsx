@@ -6,7 +6,7 @@ type IconProps = React.SVGProps<SVGSVGElement> & {
   fill?: string;
 };
 
-const LogoPrp01: React.FC<IconProps> = ({ size = 24, fill = 'white', color = "transparent", ...props }) => {
+const PrdlpLogo: React.FC<IconProps> = ({ size = 24, fill = 'white', color = "transparent", ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg" 
@@ -272,4 +272,4 @@ const LogoPrp01: React.FC<IconProps> = ({ size = 24, fill = 'white', color = "tr
   );
 };
 
-export default LogoPrp01;
+export default PrdlpLogo;

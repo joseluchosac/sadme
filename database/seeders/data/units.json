@@ -40,74 +40,9 @@
 		"name": "Metro"
 	},
 	{
-		"code": "FOT",
-		"abb": "PIE",
-		"name": "Pies"
-	},
-	{
-		"code": "INH",
-		"abb": "INCH",
-		"name": "Pulgadas"
-	},
-	{
-		"code": "YRD",
-		"abb": "YD",
-		"name": "Yarda"
-	},
-	{
 		"code": "HUR",
 		"abb": "HR",
 		"name": "Hora"
-	},
-	{
-		"code": "TNE",
-		"abb": "TNL",
-		"name": "Toneladas"
-	},
-	{
-		"code": "DZN",
-		"abb": "DOC",
-		"name": "Docena"
-	},
-	{
-		"code": "QD",
-		"abb": "1/4 DOC",
-		"name": "Cuarto de docena"
-	},
-	{
-		"code": "PK",
-		"abb": "PQT",
-		"name": "Paquete"
-	},
-	{
-		"code": "MTQ",
-		"abb": "M3",
-		"name": "Metro cúbico"
-	},
-	{
-		"code": "HD",
-		"abb": "1/2 DOC",
-		"name": "Media docena"
-	},
-	{
-		"code": "PR",
-		"abb": "PAR",
-		"name": "Par"
-	},
-	{
-		"code": "JG",
-		"abb": "JARR",
-		"name": "Jarra"
-	},
-	{
-		"code": "JR",
-		"abb": "FCO",
-		"name": "Frasco"
-	},
-	{
-		"code": "KT",
-		"abb": "KIT",
-		"name": "Kit"
 	},
 	{
 		"code": "CH",
@@ -120,21 +55,6 @@
 		"name": "Cápsula"
 	},
 	{
-		"code": "CT",
-		"abb": "CTON",
-		"name": "Cartón"
-	},
-	{
-		"code": "CY",
-		"abb": "CIL",
-		"name": "Cilindro"
-	},
-	{
-		"code": "BE",
-		"abb": "FARD",
-		"name": "Fardo"
-	},
-	{
 		"code": "BG",
 		"abb": "BOLS",
 		"name": "Bolsa"
@@ -145,34 +65,9 @@
 		"name": "Balde"
 	},
 	{
-		"code": "SET",
-		"abb": "JGO",
-		"name": "Juego"
-	},
-	{
-		"code": "BLL",
-		"abb": "BRL",
-		"name": "Barril"
-	},
-	{
-		"code": "RM",
-		"abb": "RESM",
-		"name": "Resma"
-	},
-	{
 		"code": "BO",
 		"abb": "BOT",
 		"name": "Botellas"
-	},
-	{
-		"code": "SA",
-		"abb": "SCO",
-		"name": "Saco"
-	},
-	{
-		"code": "BT",
-		"abb": "TORN",
-		"name": "Tornillo"
 	},
 	{
 		"code": "C62",
@@ -180,74 +75,14 @@
 		"name": "Piezas"
 	},
 	{
-		"code": "U2",
-		"abb": "BLIST",
-		"name": "Tableta o blister"
-	},
-	{
-		"code": "CA",
-		"abb": "LAT",
-		"name": "Latas"
-	},
-	{
-		"code": "CEN",
-		"abb": "CTO",
-		"name": "Centenar o ciento"
-	},
-	{
 		"code": "CMT",
 		"abb": "CM",
 		"name": "Centímetro"
 	},
 	{
-		"code": "CMK",
-		"abb": "CM2",
-		"name": "Centímetro cuadrado"
-	},
-	{
-		"code": "CMQ",
-		"abb": "CM3",
-		"name": "Centímetro cúbico"
-	},
-	{
-		"code": "DZP",
-		"abb": "DOC2",
-		"name": "Docena de paquetes"
-	},
-	{
-		"code": "FTK",
-		"abb": "PIE2",
-		"name": "Pies cuadrados"
-	},
-	{
-		"code": "FTQ",
-		"abb": "PIE3",
-		"name": "Pies cúbicos"
-	},
-	{
-		"code": "GLI",
-		"abb": "GLI",
-		"name": "Galón inglés"
-	},
-	{
-		"code": "HT",
-		"abb": "1/2 H",
-		"name": "Media hora"
-	},
-	{
 		"code": "KTM",
 		"abb": "KM",
 		"name": "Kilómetro"
-	},
-	{
-		"code": "KWH",
-		"abb": "KWxH",
-		"name": "Kilovatio hora"
-	},
-	{
-		"code": "MWH",
-		"abb": "MWxH",
-		"name": "Megavatio hora"
 	},
 	{
 		"code": "LBR",
@@ -258,11 +93,6 @@
 		"code": "LEF",
 		"abb": "HOJA",
 		"name": "Hoja"
-	},
-	{
-		"code": "MGM",
-		"abb": "MG",
-		"name": "Miligramos"
 	},
 	{
 		"code": "MIL",
@@ -278,65 +108,5 @@
 		"code": "MMT",
 		"abb": "MM",
 		"name": "Milímetro"
-	},
-	{
-		"code": "MMK",
-		"abb": "MM2",
-		"name": "Milímetro cuadrado"
-	},
-	{
-		"code": "MMQ",
-		"abb": "MM3",
-		"name": "Milímetro cúbico"
-	},
-	{
-		"code": "MTK",
-		"abb": "M2",
-		"name": "Metro cuadrado"
-	},
-	{
-		"code": "ONZ",
-		"abb": "ONZ",
-		"name": "Onzas"
-	},
-	{
-		"code": "PF",
-		"abb": "PAL",
-		"name": "Paletas"
-	},
-	{
-		"code": "PG",
-		"abb": "PLAC",
-		"name": "Placas"
-	},
-	{
-		"code": "RD",
-		"abb": "VAR",
-		"name": "Varilla"
-	},
-	{
-		"code": "RL",
-		"abb": "CRR",
-		"name": "Carrete"
-	},
-	{
-		"code": "SEC",
-		"abb": "SEG",
-		"name": "Segundo"
-	},
-	{
-		"code": "ST",
-		"abb": "PLGO",
-		"name": "Pliego"
-	},
-	{
-		"code": "TU",
-		"abb": "TB",
-		"name": "Tubos"
-	},
-	{
-		"code": "UM",
-		"abb": "MILL",
-		"name": "Millón"
 	}
 ]

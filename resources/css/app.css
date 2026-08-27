@@ -187,16 +187,15 @@
     }
 }
 
-/* Estilos aplicados para Quill en preview-quill */
 
+/* Estilos aplicados para Quill en preview-quill */
 #preview-quill {
-    color: #000 !important;
-    background: #fff !important;
+    /* color: #000 !important; */
+    /* background: #fff !important; */
     font-family: inherit !important;
     border: none !important;
-    padding: 1rem !important;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    /* padding: 0.5rem !important; */
+    /* @apply dark:bg-gray-200 dark:text-black; */
 }
 
 #preview-quill h1,
@@ -330,4 +329,7 @@
 #preview-quill .mb-2em { margin-bottom: 2em !important; }
 #preview-quill .mb-3em { margin-bottom: 3em !important; }
 
+#preview-quill .ql-align-justify {
+    text-align: justify;
+}
 

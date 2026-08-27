@@ -1,20 +1,26 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Head, router, useForm } from '@inertiajs/react';
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Separator } from '@/components/ui/separator';
+import { Spinner } from '@/components/ui/spinner';
+import { Feature, ProductData, PricesQrystr, ProductsPaginated } from '@/types';
+import useService from '@/hooks/use-service';
+import { Head, Link, router, useForm } from '@inertiajs/react';
 import {
   ArrowUpDown,
   FlaskConical,
+  Home,
   LayoutGrid,
   List,
+  Phone,
   SlidersHorizontal,
 } from 'lucide-react';
-// import FilterBadges from './components/filter-badges';
 import CategoriesNav from './components/categories-nav';
 import ProductsSearch from './components/products-search';
-import { PricesQrystr, ProductsPaginated, } from '@/types';
 import ProductCard from './components/product-card';
 import { useEffect, useState } from 'react';
 import { Pagination } from '@/components/ui/custom/pagination';
+import Header from '../components/header';
 
 interface Props {
   products: ProductsPaginated;
@@ -31,6 +37,8 @@ const pricesQrystrInit: PricesQrystr = {
 
 export default function Index({ products, qrystr }: Props) {
   const [firstRender, setFirstRender] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
+  const { getProductPublic, data: productData, isLoading, reset } = useService<ProductData>();
   const pricesQrystr = useForm<PricesQrystr>({
     search: qrystr.search || '',
     category_id: qrystr.category_id || null,
@@ -69,6 +77,16 @@ export default function Index({ products, qrystr }: Props) {
     );
   };
 
+  const handleOpenProduct = (product: { id: number }) => {
+    setModalOpen(true);
+    getProductPublic(product.id);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    reset();
+  };
+
   useEffect(() => {
     if (!firstRender) {
       applyFilter();
@@ -78,25 +96,13 @@ export default function Index({ products, qrystr }: Props) {
   }, [pricesQrystr.data]);
 
   return (
-    <div className="flex min-h-svh flex-col bg-muted/30">
+    <div className="flex min-h-svh flex-col bg-gradient-to-b from-sky-50 to-white dark:from-gray-900 dark:to-gray-950">
       <Head title="Consulta de precios" />
-      <header className="sticky top-0 z-10 border-b bg-indigo-50 dark:bg-indigo-700 text-indigo-700 dark:text-indigo-50 shadow-sm">
-        <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-4 py-4 md:px-6">
-          <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary-foreground/15 md:size-14">
-            <FlaskConical className="size-7 md:size-8" aria-hidden="true" />
-          </div>
-          <div className="min-w-0">
-            <h1 className="truncate text-xl font-bold tracking-tight md:text-3xl">Consulta de Precios</h1>
-            <p className="truncate text-xs md:text-sm">
-              Catálogo de precios
-            </p>
-          </div>
-        </div>
-      </header>
-      <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-5 md:px-6 md:py-8">
+      <Header showPhoneBtn={false} />
+      <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-5 md:px-6 md:py-8 ">
         <ProductsSearch pricesQrystr={pricesQrystr} />
         <CategoriesNav pricesQrystr={pricesQrystr} />
-        <section aria-label="Filtros" className="mt-4 flex items-center gap-2">
+        {/* <section aria-label="Filtros" className="mt-4 flex items-center gap-2">
           <Button variant="outline" className="h-11 touch-manipulation gap-2 rounded-xl px-4 text-base active:scale-95">
             <ArrowUpDown className="size-5" aria-hidden="true" />
             Ordenar
@@ -114,7 +120,7 @@ export default function Index({ products, qrystr }: Props) {
               <List className="size-5" />
             </Button>
           </div>
-        </section>
+        </section> */}
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
           <p className="text-sm text-muted-foreground md:text-base">
             <span className="text-base font-bold text-foreground md:text-lg">{products.total}</span>{' '}
@@ -136,6 +142,7 @@ export default function Index({ products, qrystr }: Props) {
             <ProductCard
               key={product.id}
               product={product}
+              onClick={handleOpenProduct}
             />
           ))}
         </section>
@@ -152,6 +159,70 @@ export default function Index({ products, qrystr }: Props) {
           Precios referenciales sujetos a variación · Policlínico Reyna de la Paz
         </p>
       </footer>
+
+      <Dialog open={modalOpen} onOpenChange={(open) => !open && handleCloseModal()}>
+        <DialogContent className="max-w-90  sm:max-w-xl">
+          {isLoading ? (
+            <div className="flex items-center justify-center py-12">
+              <Spinner className="size-6" />
+            </div>
+          ) : productData ? (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-xl pr-8">{productData.name}</DialogTitle>
+                <DialogDescription>{productData.code}</DialogDescription>
+              </DialogHeader>
+              <Separator />
+              <div className='-mx-4 no-scrollbar max-h-[50vh] overflow-y-auto px-4 dark:[color-scheme:dark]'>
+                <div className="flex flex-col gap-3 text-sm">
+                  {productData.description && (
+                    <p className="text-muted-foreground">{productData.description}</p>
+                  )}
+                  {productData.features && productData.features.length > 0 && (
+                    <div className="flex flex-col gap-1.5">
+                      {/* <span className="font-medium">Características:</span> */}
+                      <ul className="flex flex-wrap gap-1.5">
+                        {productData.features.map((feature: Feature, idx: number) => (
+                          <li key={idx} className="inline-flex h-7 items-center gap-1.5 rounded-full border bg-muted/50 px-2.5 text-xs font-medium text-muted-foreground">
+                            <span className="font-semibold">{feature[0]}:</span> {feature[1]}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {productData.observations && (
+                    <div className="flex items-center gap-2">
+                      <span className="font-medium">Observaciones:</span>
+                      <span className="text-yellow-600">{productData.observations}</span>
+                    </div>
+                  )}
+                  {productData.details && (
+                    <div className="flex flex-col gap-1">
+                      <span className="font-medium">Detalles:</span>
+                      <div
+                        id='preview-quill'
+                        className="text-sm text-muted-foreground [&_ul]:list-disc [&_ul]:pl-4 [&_li]:mb-0.5"
+                        dangerouslySetInnerHTML={{ __html: productData.details }}
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+                  <Separator />
+                  <div className="flex items-end justify-between">
+                    <span className="text-xs uppercase tracking-wide text-muted-foreground">Precio</span>
+                    <p className="text-2xl font-extrabold tabular-nums text-primary">
+                      {!!productData.show_price ? `S/ ${Number(productData.price).toFixed(2)}` : 'No disponible'}
+                    </p>
+                  </div>
+            </>
+          ) : (
+            <div className="py-8 text-center text-sm text-muted-foreground">
+              No se pudo cargar la información del producto.
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

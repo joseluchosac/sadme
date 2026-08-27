@@ -41,5 +41,6 @@ Route::middleware(['auth'])->group(function () {
 Route::get('catalogs/get-units', [CatalogController::class, 'getUnits'])->name('catalogs.get-units');
 Route::get('catalogs/get-affectation-types', [CatalogController::class, 'getAffectationTypes'])->name('catalogs.get-affectation-types');
 Route::get('categories/get-all', [CategoryController::class, 'getAll'])->name('categories.get-all');
+Route::get('products/pub/{product}', [ProductController::class, 'getProductPublic'])->name('products-pub.get');
 require __DIR__ . '/settings.php';
 require __DIR__ . '/auth.php';
